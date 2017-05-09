@@ -1,0 +1,24 @@
+{
+  "name": "tutorkarma",
+  "version": "1.0.0",
+  "description": "community based tutoring app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mstorino/tutorKarma.git"
+  },
+  "author": "maggie, karel, angela, alita, rahul",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mstorino/tutorKarma/issues"
+  },
+  "homepage": "https://github.com/mstorino/tutorKarma#readme",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "mysql": "^2.13.0"
+  }
+}

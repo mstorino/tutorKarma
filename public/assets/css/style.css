@@ -1,5 +1,6 @@
 body {
 	background-color: whitesmoke;
+	font-family: lato, Arial, sans-serif;
 }
 
 .headerWrapper {
@@ -14,17 +15,21 @@ body {
 }
 
 .dropdown-toggle {
-	font-family: "futura-pt", Arial, sans-serif;
-	font-size: 14px;
+	font-family: lato, Arial, sans-serif;
+	font-size: 16px;
 	text-transform: uppercase;
 }
 
+.glyphicon-apple, .glyphicon-pencil {
+	font-size: 20px;
+	padding: 0px 5px 0px 5px;
+}
 .lastDropdown {
 	border-left: 1px solid grey;
 }
 
 .jumbotron h1 {
-	color:pink;
+	color:#777777;
 }
 
 .footer {

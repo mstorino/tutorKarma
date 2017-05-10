@@ -98,10 +98,35 @@
     background-color: #f5f5f5;
 }
 
+
+
 /*ADMIN HTML FORMATTING*/
+.addTutor {
+	float:right;
+}
+/*END ADMIN FORMATTING*/
 
+.searchResults {
+	margin-top: 10px;
+	height: 300px;
+	border-color: black;
+	border-width: 5px;
+	border-style: solid;
+}
 
+.upcomingSession {
+	margin-top: 10px;
+	height: 300px;
+	border-color: black;
+	border-width: 5px;
+	border-style: solid;
+}
 
+/*STUDENT HTML FORMATTING*/
+/*END STUDENT FORMATTING*/
+
+/*TUTOR HTML FORMATTING*/
+/*END TUTOR FORMATTING*/
 
 /* Extra small devices (phones, less than 768px) */
 /* No media query since this is the default in Bootstrap */

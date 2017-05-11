@@ -1,22 +1,29 @@
-// *********************************************************************************
-// html-routes.js - this file offers a set of routes for sending users to the various html pages
-// *********************************************************************************
-
-// Dependencies
-// =============================================================
-var path = require("path");
-
 // Routes
 // =============================================================
 module.exports = function(app) {
 
+  app.get("/", function (req, res) {
+    res.render("index")
+  });
+
+  app.get("/student", function (req, res) {
+    res.render("./layouts/student")
+  });
+
+  app.get("/tutor", function (req, res) {
+    res.render("./layouts/tutor")
+  });
+
+  app.get("/admin", function (req, res) {
+    res.render("./layouts/admin")
+  });
   // Each of the below routes just handles the HTML page that the user gets sent to.
   // Names subject to change!
   // May need to add reservations route, admin route etc
 
   // index route loads index.html
   // app.get("/", function(req, res) {
-  //   res.sendFile(path.join(__dirname, "../public/admin.html"));
+  //   res.sendFile(path.join(__dirname, "../public/index.html"));
   // });
 
   // students route loads student-manager.html

@@ -11,23 +11,21 @@ module.exports = function(sequelize, DataTypes) {
   },
   {
     classMethods: {
-        associate: function(models) {
-          // A user_id and available_id foreign keys are required or user availability entry cannot be made
-          UserAvailability.belongsTo(models.User, {
-            foreignKey: {
-              allowNull: false
-            }
-          }),
-          UserAvailability.belongsTo(models.Availability, {
-            foreignKey: {
-              allowNull: false
-            }
-          });
-        }
+      associate: function(models) {
+        // A user_id and available_id foreign keys are required or user availability entry cannot be made
+        UserAvailability.belongsTo(models.User, {
+          foreignKey: {
+            allowNull: false
+          }
+        }),
+        UserAvailability.belongsTo(models.Availability, {
+          foreignKey: {
+            allowNull: false
+          }
+        });
       }
-    }
-    
+    }  
   });
   return UserAvailability;
-  }
+  
 };

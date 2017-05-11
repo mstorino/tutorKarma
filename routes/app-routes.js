@@ -7,15 +7,15 @@ module.exports = function(app) {
   });
 
   app.get("/student", function (req, res) {
-    res.render("./layouts/student")
+    res.render("student")
   });
 
   app.get("/tutor", function (req, res) {
-    res.render("./layouts/tutor")
+    res.render("tutor")
   });
 
   app.get("/admin", function (req, res) {
-    res.render("./layouts/admin")
+    res.render("admin")
   });
   // Each of the below routes just handles the HTML page that the user gets sent to.
   // Names subject to change!

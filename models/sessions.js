@@ -15,27 +15,29 @@ module.exports = function(sequelize, DataTypes) {
   },
   {
     classMethods: { //need to check alias documentation
-        associate: function(models) {
-          // A user_id, available_id and subject_id foreign keys are required or session entry cannot be made
-          Session.belongsTo(models.User, {
-            as: "tutor"
-            foreignKey: "tutor_id"
-          });
-          /*Session.belongsTo(models.Subject, {
-            foreignKey: {
-              allowNull: false
-            }
-          }),
-          Session.belongsTo(models.Availability, {
-            foreignKey: {
-              allowNull: false
-            }
-          });*/
-        }
+      associate: function(models) {
+        // A user_id, available_id and subject_id foreign keys are required or session entry cannot be made
+        Session.belongsTo(models.User, {
+          as: "tutor",
+          foreignKey: "tutor_id"
+        });
+        Session.belongsTo(models.User, {
+          as: "student",
+          foreignKey: "student_id"
+        });
+        Session.belongsTo(models.Subject, {
+          foreignKey: {
+            allowNull: false
+          }
+        }),
+        Session.belongsTo(models.Availability, {
+          foreignKey: {
+            allowNull: false
+          }
+        });
       }
     }
-    
+      
   });
   return Session;
-  }
-};
+}

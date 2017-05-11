@@ -11,23 +11,20 @@ module.exports = function(sequelize, DataTypes) {
   },
   {
     classMethods: {
-        associate: function(models) {
-          // A user_id and subject_id foreign keys are required or user subject entry cannot be made
-          UserSubject.belongsTo(models.User, {
-            foreignKey: {
-              allowNull: false
-            }
-          }),
-          UserSubject.belongsTo(models.Subject, {
-            foreignKey: {
-              allowNull: false
-            }
-          });
-        }
+      associate: function(models) {
+        // A user_id and subject_id foreign keys are required or user subject entry cannot be made
+        UserSubject.belongsTo(models.User, {
+          foreignKey: {
+            allowNull: false
+          }
+        }),
+        UserSubject.belongsTo(models.Subject, {
+          foreignKey: {
+            allowNull: false
+          }
+        });
       }
-    }
-    
+    }    
   });
   return UserSubject;
-  }
 };

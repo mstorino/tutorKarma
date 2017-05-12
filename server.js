@@ -7,6 +7,10 @@
 var express = require("express");
 var exphbs = require("express-handlebars");
 var bodyParser = require("body-parser");
+var passport = require("passport");
+var session = require("express-session");
+var env = require('dotenv').load();
+var exphbs = require("express-handlebars"); 
 
 // Sets up the Express App
 // =============================================================
@@ -14,9 +18,6 @@ var app = express();
 var PORT = process.env.PORT || 3000;
 
 // set handlebars
-// Dependencies
-var express = require("express");
-var exphbs = require("express-handlebars"); 
 
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars"); 
@@ -37,11 +38,24 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 // Static directory
 app.use(express.static("./public"));
 
+// For Passport
+app.use(session({
+	secret: "keyboard cat",
+	resave: true, 
+	saveUninitialized:true
+})); // session secret
+app.use(passport.initialize());
+app.use(passport.session()); // persistent login sessions
+
 // Routes =============================================================
 
 // require("./routes/html-routes.js")(app);
 require("./routes/app-routes.js")(app);
+var authRoute = require("./routes/auth.js")(app, passport);
 //Need to add more routes
+
+//load passport strategies
+require("./config/passport/passport.js")(passport, db.User);
 
 // Syncing our sequelize models and then starting our express app
 db.sequelize.sync({ force: false }).then(function() {

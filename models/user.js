@@ -23,7 +23,7 @@ module.exports = function(sequelize, DataTypes) {
     },
     photo: {
       type: DataTypes.STRING,
-    }
+    },
     email: {
       type: Sequelize.STRING,
       validate: {

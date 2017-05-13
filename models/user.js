@@ -56,23 +56,6 @@ module.exports = function(sequelize, DataTypes) {
       	}
     }
 
-  },
-    // Here we'll pass a second "classMethods" object into the define method
-  {
-      // We're saying that we want our User to have Available times and Subjects
-      classMethods: {
-        associate: function(models) {
-          // Associating User with Availability and Subject
-          // When a user is deleted, also delete any associated availabilities and subjects
-          User.hasMany(models.Availability, {
-            onDelete: "cascade"
-          });
-          User.hasMany(models.Subject, {
-          	onDelete: "cascade"
-          });
-        }
-      }
-    }
-  );
+  });
   return User;
 };

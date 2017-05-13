@@ -1,3 +1,4 @@
+var db = require("../models");
 // Routes
 // =============================================================
 module.exports = function(app) {
@@ -11,14 +12,15 @@ module.exports = function(app) {
    }).then(function(dbSubjects){
     // [{id: 1, SubjectName: 'math'}]
      console.log(dbSubjects);
-     db.Tutor.findAll({
+     db.User.findAll({
      }).then(function(dbTutors){
-        // res.render(“student”, {
-        // availSubject: dbSubjects,
+        res.render("student", {
+        availSubject: dbSubjects,
         // availTutor: dbTutors,
-      console.log(dbTutors);
+      // console.log(dbTutors);
       })
-  }
+    });
+  
  
   });
 

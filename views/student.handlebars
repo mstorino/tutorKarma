@@ -8,11 +8,15 @@
       Search by Subject
       <span class="caret"></span>
     </button>
-    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-      <li><a href="#"> 1</a></li>
-      <li><a href="#"> 2 </a></li>
-      <li><a href="#"> 3 </a></li>
+    <ul class="dropdown-menu" aria-labelled by="dropdownMenu1">
+    {{#each availSubject}}
+      <li><a href="#"> {{subjectName}}</a></li>
+    {{/each}}
     </ul>
+
+
+
+
   </span> <!-- closes first dropdown span -->
  <!-- search by  -->
   <span class="dropdown">

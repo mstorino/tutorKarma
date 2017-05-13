@@ -7,8 +7,23 @@ module.exports = function(app) {
   });
 
   app.get("/student", function (req, res) {
-    res.render("student")
+   db.Subject.findAll({
+   }).then(function(dbSubjects){
+    // [{id: 1, SubjectName: 'math'}]
+     console.log(dbSubjects);
+     db.Tutor.findAll({
+     }).then(function(dbTutors){
+        // res.render(“student”, {
+        // availSubject: dbSubjects,
+        // availTutor: dbTutors,
+      console.log(dbTutors);
+      })
+  }
+ 
   });
+
+
+ });
 
   app.get("/tutor", function (req, res) {
     res.render("tutor")

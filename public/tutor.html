@@ -21,6 +21,8 @@
 
 <!-- Custom Stylesheet -->
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+
   
 <!-- Google Font -->
   
@@ -32,63 +34,51 @@
 
 <!-- MAIN CONTENT -->
 <div class="container">
-<!--  <button type="button" class="btn btn-lrg btn-primary updateAvailability">
-   Update your availability
- </button>
 
-upcoming sessions div
-  <div class="container upcomingSession">
-    <h1> List upcoming sessions here </h1>
-  </div> -->
-
+<!-- form to collect tutor data -->
 <div class="form">
-  <h1> Enter your information to sign-up and become a tutor </h1>
-<div class="input-group">
-  <span class="input-group-addon" id="basic-addon1">First Name</span>
-  <input type="text" class="form-control" placeholder="First name" aria-describedby="basic-addon1">
-</div>
-<div class="input-group">
-  <span class="input-group-addon" id="basic-addon1">Last Name</span>
-  <input type="text" class="form-control" placeholder="Last name" aria-describedby="basic-addon1">
-</div>
-<div class="input-group">
-  <span class="input-group-addon" id="basic-addon1">Email</span>
-  <input type="text" class="form-control" placeholder="example@email.com" aria-describedby="basic-addon1">
-</div>
-<div class="input-group">
-  <span class="input-group-addon" id="basic-addon1">Profile Picture</span>
-  <input type="text" class="form-control" placeholder="Profile Picture" aria-describedby="basic-addon1">
-</div>
-<h2> Please select up to 3 subjects you will teach </h2>
-<div class="btn-group">
-  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Subject 1 <span class="caret"></span>
-  </button>
-  <ul class="dropdown-menu">
-    <li><a href="#" data-value="Bioligy">Biology</a></li>
-    <li><a href="#" data-value="Chemistry">Chemistry</a></li>
-    <li><a href="#" data-value="Math ">Math</a></li>
-    <li><a href="#" data-value="English">English</a></li>
-  </ul>
-    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Subject 1 <span class="caret"></span>
-  </button>
-  <ul class="dropdown-menu">
-    <li><a href="#" data-value="Bioligy">Biology</a></li>
-    <li><a href="#" data-value="Chemistry">Chemistry</a></li>
-    <li><a href="#" data-value="Math ">Math</a></li>
-    <li><a href="#" data-value="English">English</a></li>
-  </ul>
-    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Subject 1 <span class="caret"></span>
-  </button>
-  <ul class="dropdown-menu">
-    <li><a href="#" data-value="Bioligy">Biology</a></li>
-    <li><a href="#" data-value="Chemistry">Chemistry</a></li>
-    <li><a href="#" data-value="Math ">Math</a></li>
-    <li><a href="#" data-value="English">English</a></li>
-  </ul>
-</div> <!-- close button div  -->
+    <h2> Want to become a tutor? Enter your information! </h2>
+  <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1">First Name</span>
+      <input type="text" class="form-control" placeholder="First name" aria-describedby="basic-addon1">
+  </div> <!-- close first name input -->
+  <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1">Last Name</span>
+    <input type="text" class="form-control" placeholder="Last name" aria-describedby="basic-addon1">
+  </div> <!-- close last name input -->
+  <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1">Email</span>
+    <input type="text" class="form-control" placeholder="example@email.com" aria-describedby="basic-addon1">
+  </div> <!-- close email -->
+  <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1">Profile Picture</span>
+    <input type="text" class="form-control" placeholder="Profile Picture" aria-describedby="basic-addon1">
+  </div> <!-- close profile picture  -->
+    <h3> Please select up to 3 subjects you will teach </h3>
+
+<div class="row subjectButtons">
+    <span class="button col-md-2">
+      <input type="radio" aria-label="..." data-value="Math"> Math 
+    </span>
+    <span class="button col-md-2">
+      <input type="radio" aria-label="..." data-value="Chemistry"> Chemistry 
+    </span>
+    <span class="button col-md-2">
+      <input type="radio" aria-label="..." data-value="Biology"> Biology 
+    </span>
+    <span class="button col-md-2">
+      <input type="radio" aria-label="..." data-value="English"> English 
+    </span>
+    <span class="button col-md-2">
+      <input type="radio" aria-label="..." data-value="Spanish"> Spanish 
+    </span>
+    <span class="button col-md-2">
+      <input type="radio" aria-label="..." data-value="Economics"> Economics 
+    </span>
+
+
+</div><!-- subject buttons-->
+
 
 </div> <!-- close form div -->
 
@@ -96,6 +86,5 @@ upcoming sessions div
 
 </div> <!-- closing container div  -->
 
-<script type="text/javascript" src="test.js"></script>
 </body>
 </html>

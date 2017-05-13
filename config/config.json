@@ -1,8 +1,8 @@
 {
   "development": {
     "username": "root",
-    "password": "",
-    "database": "tutor_db",
+    "password": "6s&Mov!Drac3k",
+    "database": "tutorkarmatest_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },

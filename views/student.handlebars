@@ -24,11 +24,10 @@
       Search by Name
       <span class="caret"></span>
     </button>
-    <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-      <li><a href="#"> 1</a></li>
-      <li><a href="#"> 2 </a></li>
-      <li><a href="#"> 3 </a></li>
-      <li><a href="#"> 4 </a></li>
+    <ul class="dropdown-menu" aria-labelled by="dropdownMenu1">
+    {{#each availTutor}}
+      <li><a href="#"> {{firstName}}</a></li>
+    {{/each}}
     </ul>
   </span> <!-- closes first dropdown div -->
 

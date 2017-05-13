@@ -13,10 +13,13 @@ module.exports = function(app) {
     // [{id: 1, SubjectName: 'math'}]
      console.log(dbSubjects);
      db.User.findAll({
+        where: {
+         role: "tutor" 
+        }
      }).then(function(dbTutors){
         res.render("student", {
         availSubject: dbSubjects,
-        // availTutor: dbTutors,
+        availTutor: dbTutors,
       // console.log(dbTutors);
       })
     });

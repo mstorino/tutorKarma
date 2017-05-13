@@ -14,18 +14,18 @@ var db = require("../models");
 module.exports = function(app) {
   app.get("/api/users", function(req, res) {
     db.User.findAll({
-    }).then(function(dbTutor) {
-      res.json(dbTutor);
+    }).then(function(dbUser) {
+      res.json(dbUser);
     });
   });
 
   app.get("/api/users/:id", function(req, res) {
-    db.Tutor.findOne({
+    db.User.findOne({
       where: {
         id: req.params.id
       },
-    }).then(function(dbTutor) {
-      res.json(dbTutor);
+    }).then(function(dbUser) {
+      res.json(dbUser);
     });
   });
 

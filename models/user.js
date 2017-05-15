@@ -28,6 +28,9 @@ module.exports = function(sequelize, DataTypes) {
     about: {
       type: DataTypes.TEXT,
     },
+    photo: {
+      type: DataTypes.STRING,
+    },
     email: {
       type: Sequelize.STRING,
       validate: {
@@ -54,7 +57,7 @@ module.exports = function(sequelize, DataTypes) {
       	validate: {
         	len: [1]
       	}
-    }
+    },
 
   });
   return User;

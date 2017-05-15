@@ -1,3 +1,5 @@
+SELECT DATABASE tutor_db;
+
 INSERT INTO user (name, role) VALUES
 ("John Smith", "tutor");
 

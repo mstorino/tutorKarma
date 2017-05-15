@@ -14,27 +14,44 @@
     {{/each}}
     </ul>
 
-
-
-
   </span> <!-- closes first dropdown span -->
  <!-- search by  -->
   <span class="dropdown">
     <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-      Search by Name
+      Search by Tutor
       <span class="caret"></span>
     </button>
     <ul class="dropdown-menu" aria-labelled by="dropdownMenu1">
-    {{#each availTutor}}
-      <li><a href="#"> {{firstName}}</a></li>
-    {{/each}}
+      {{#each availTutor}}
+        <li><a href="#"> {{firstName}}</a></li>
+      {{/each}}
     </ul>
   </span> <!-- closes first dropdown div -->
 
 <!-- search results  -->
-  <div class="container searchResults col-md-10">
-      <h1> List search results here </h1>
-  </div>
+  <div class="container-fluid searchResults">
+      <div class="row">
+
+       {{#each availTutor}}
+        <div class="col-xs-6 col-md-3 col-lg-2">
+          <div class="thumbnail">
+            <img src="http://placehold.it/500x500/EEE">
+            <div class="caption">
+             
+                <h4 class = "capitalize">{{firstName}}</h4>
+                <p>{{about}}</p> 
+              
+              <a href="#" class="btn btn-default btn-xs" role="button">Book This Tutor</a> 
+
+              <a href="#" class="btn btn-default btn-xs favoriteTutor" role="button"><i class="glyphicon glyphicon-heart"></i></a>
+            
+          </div>
+
+        </div>
+
+      </div>
+      {{/each}}
+  </div> <!-- close .searchResults div  -->
 
 
 

@@ -2,6 +2,9 @@ body {
 	background-color: whitesmoke;
 	font-family: lato, Arial, sans-serif;
 }
+.capitalize {
+	text-transform: capitalize;
+}
 
 .headerWrapper {
 	padding: 15px 15px 30px 15px;
@@ -50,10 +53,22 @@ body {
 
 .searchResults {
 	margin-top: 10px;
-	height: 300px;
+	/*height: 300px;*/
 	border-color: black;
 	border-width: 5px;
 	border-style: solid;
+	padding-right: 0px;
+	padding-left: 0px;
+}
+
+.favoriteTutor {
+	border:none;
+	font-size: 20px;
+}
+
+.glyphicon-heart {
+	padding-left: 54px;
+	color:tomato;
 }
 
 .upcomingSession {

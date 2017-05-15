@@ -64,6 +64,10 @@ body {
 	border-style: solid;
 }
 
+.footer {
+	display: none;
+}
+
 /*STUDENT HTML FORMATTING*/
 /*END STUDENT FORMATTING*/
 

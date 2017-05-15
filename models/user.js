@@ -20,10 +20,10 @@ module.exports = function(sequelize, DataTypes) {
     },
     username: {
       type: DataTypes.TEXT,
-      allowNull: false,
+      /*allowNull: false,
         validate: {
           len: [1]
-        }
+        }*/
     },
     about: {
       type: DataTypes.TEXT,
@@ -53,10 +53,10 @@ module.exports = function(sequelize, DataTypes) {
     },
     role: {
     	type: DataTypes.STRING,
-    	allowNull: false,
+    	/*allowNull: false,
       	validate: {
         	len: [1]
-      	}
+      	}*/
     },
 
   });

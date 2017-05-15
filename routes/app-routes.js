@@ -11,7 +11,7 @@ module.exports = function(app) {
    db.Subject.findAll({
    }).then(function(dbSubjects){
     // [{id: 1, SubjectName: 'math'}]
-     console.log(dbSubjects);
+     // console.log(dbSubjects);
      db.User.findAll({
         where: {
          role: "tutor" 

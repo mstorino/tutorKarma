@@ -33,17 +33,15 @@
       <div class="row">
 
        {{#each availTutor}}
-        <div class="col-xs-6 col-md-3 col-lg-2">
-          <div class="thumbnail">
+        <div class="tutorThumbnailContainer col-xs-6 col-md-3 col-lg-2">
+          <div class="thumbnail tutorThumbnail">
             <img src="http://placehold.it/500x500/EEE">
             <div class="caption">
              
-                <h4 class = "capitalize">{{firstName}}</h4>
+                <h4 class = "capitalize tutorName">{{firstName}}</h4>
                 <p>{{about}}</p> 
               
               <a href="#" class="btn btn-default btn-xs" role="button">Book This Tutor</a> 
-
-              <a href="#" class="btn btn-default btn-xs favoriteTutor" role="button"><i class="glyphicon glyphicon-heart"></i></a>
             
           </div>
 
@@ -53,6 +51,7 @@
       {{/each}}
   </div> <!-- close .searchResults div  -->
 
+<script src="assets/js/rating.js"></script> 
 
 
 </div> <!-- close container div  -->

@@ -17,7 +17,7 @@ body {
 	border-right: 1px solid grey;
 }
 
-.dropdown-toggle {
+.navList {
 	font-family: lato, Arial, sans-serif;
 	font-size: 16px;
 	text-transform: uppercase;
@@ -27,7 +27,8 @@ body {
 	font-size: 20px;
 	padding: 0px 5px 0px 5px;
 }
-.lastDropdown {
+
+.lastNav {
 	border-left: 1px solid grey;
 }
 
@@ -61,15 +62,46 @@ body {
 	padding-left: 0px;
 }
 
-.favoriteTutor {
+.tutorThumbnailContainer {
+	padding: 0px;
+}
+
+.tutorThumbnail {
+	border-radius: 0;
+	margin-bottom: 0px;
+	padding: 0px;
+}
+
+.tutorName {
+	position: absolute;
+    top: 25px;
+    height: 35px;
+    width: 35%;
+    font-size: 2.1em;
+    color: #333;
+    letter-spacing: -0.5px;
+    font-family: "HelveticaNeueHeavy","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+/*.favoriteTutor {
 	border:none;
 	font-size: 20px;
+}
+
+.favoriteTutor:hover {
+	background-color: white;
 }
 
 .glyphicon-heart {
 	padding-left: 54px;
 	color:tomato;
+	transition: all .2s ease-in-out;
+
 }
+
+.glyphicon-heart:hover { 
+	transform: scale(1.1); 
+}*/
 
 .upcomingSession {
 	margin-top: 10px;

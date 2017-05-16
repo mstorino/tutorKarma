@@ -38,10 +38,36 @@
             <img src="http://placehold.it/500x500/EEE">
             <div class="caption">
              
+
                 <h4 class = "capitalize tutorName">{{firstName}}</h4>
                 <p>{{about}}</p> 
               
-              <a href="#" class="btn btn-default btn-xs" role="button">Book This Tutor</a> 
+
+              <button type="button" class="btn btn-primary btn-xs bookTutor" data-toggle="modal" data-target="#myModal{{@index}}">
+              Book this tutor! 
+              </button>
+
+              <!-- Modal -->
+            <div class="modal fade" id="myModal{{@index}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" id="myModalLabel">
+              Book a tutoring session with <span class="capitalize"> {{firstName}} {{lastName}}!</span> </h4>
+            </div>
+            <div class="modal-body">
+
+              <div> <span class="capitalize"> {{firstName}} </span> is available at the following times: </div>
+              
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Submit request</button>
+            </div>
+            </div>
+            </div>
+            </div> <!--closes modal div -->
             
           </div>
 

@@ -26,9 +26,44 @@ module.exports = function(app) {
   
  
   });
-
-
  });
+
+ /* app.put("/api/userSubjects/:id", function (req, res) {
+    console.log(req.body);
+    
+    for (var i = 0; i < req.body.subject.length; i++) {
+      db.UserSubject.update({
+        subject: req.body
+      },
+        where: {
+          UserID: req.user.id,
+          SubjectID: req.body.subjectID
+      }).then(function(dbTutors) {
+    //res.redirect("/");
+      
+      });
+    }
+  });*/
+
+  app.put("/api/userSubjects/:id", function(req, res) {
+    console.log(req.body);
+    for (var i = 0; i < req.body.subject.length; i++) {
+      db.UserSubject.update({
+        subject: req.body
+      },
+        {
+          where: {
+            id: req.user.id,
+            SubjectID: req.body.subjectID
+          }
+        }).then(function(dbTutors) {
+          //res.redirect("/");
+        });
+    }
+  });
+
+
+ 
 
   app.get("/tutor", function (req, res) {
     res.render("tutor")

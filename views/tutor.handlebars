@@ -1,7 +1,7 @@
 <!-- MAIN CONTENT -->
 <div class="container">
 
-<div class="form">
+<!-- <div class="form">
     <h2> Want to become a tutor? Enter your information! </h2>
   <div class="input-group">
     <span class="input-group-addon" id="basic-addon1 firstname">First Name</span>
@@ -43,7 +43,7 @@
     <h3> Please select up to 3 subjects you will teach </h3>
 
 <div class="row subjectButtons">
-    <span class="button col-md-2">
+    <!-- <span class="button col-md-2">
       <input type="radio" aria-label="..." data-value="Math"> Math 
     </span>
     <span class="button col-md-2">
@@ -60,14 +60,24 @@
     </span>
     <span class="button col-md-2">
       <input type="radio" aria-label="..." data-value="Economics"> Economics 
-    </span>
+    </span> -->
+
+
 </div><!-- subject buttons-->
 
 <button type="submit" class="btn btn-default btn-primary">Submit</button>
 
 
 </div> <!-- close form div -->
+-->
+    <form action="/{{this.id}}?_method=PUT" method="POST">
+      <label class="checkbox-inline"><input type="checkbox" name="subjectID" value="1">Chemistry</label>
+      <label class="checkbox-inline"><input type="checkbox" name="subjectID" value="5">Biology</label>
+      <label class="checkbox-inline"><input type="checkbox" name="subjectID" value="6">English</label>
 
+      <button class="btn btn-primary" type="submit">Submit</button>
+
+    </form>
 
 </div> <!-- closing container div  -->
 

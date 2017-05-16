@@ -1,111 +1,55 @@
 
-CREATE DATABASE tutor_db;
-USE tutor_db;
-
-CREATE TABLE user
-(
-	id INTEGER (11)  AUTO_INCREMENT NOT NULL,
-	name VARCHAR (50) NOT NULL,
-	role VARCHAR (50) NOT NULL,
-	PRIMARY KEY (id)
-);
-
-
-CREATE TABLE user_availability
-(
-	id INTEGER (11)  AUTO_INCREMENT NOT NULL,
-	user_id INTEGER (11) NOT NULL,
-	availability_id INTEGER (11) NOT NULL,
-    available VARCHAR (50) NOT NULL,
-	PRIMARY KEY (id)
-);
-
-CREATE TABLE availability
-(
-	id INTEGER (11)  AUTO_INCREMENT NOT NULL,
-	day VARCHAR (50) NOT NULL,
-    time_slot VARCHAR (50) NOT NULL,
-	PRIMARY KEY (id)
-);
-
-
-CREATE TABLE userSubject (
-    id INTEGER (11) AUTO_INCREMENT NOT NULL,
-	user_id INTEGER (11) NOT NULL,
-    subject_id INTEGER (11) NOT NULL,
-    PRIMARY KEY (id)
-);
-
-CREATE TABLE subject (
-    id INTEGER (11) AUTO_INCREMENT NOT NULL,
-    subjectName VARCHAR (30) NOT NULL,
-    PRIMARY KEY (id)
-);
-
-CREATE TABLE session (
-    id INTEGER (11) AUTO_INCREMENT NOT NULL,
-    tutor_id INTEGER (11) NOT NULL,
-    student_id INTEGER (11) NOT NULL,
-    availability_id INTEGER (11) NOT NULL,
-    state VARCHAR (30) NOT NULL,
-     PRIMARY KEY (id)
-)
 
 USE tutor_db;
 
+SET FOREIGN_KEY_CHECKS=0;
 
-SELECT * FROM useravailabilities;
+TRUNCATE TABLE availabilities;
 
-SELECT * FROM subjects;
-
-INSERT INTO subjects (subjectName, createdAt, updatedAt) VALUES
-("Chemistry", "2017-12-22", "2017-12-22");
-INSERT INTO subjects (subjectName, createdAt, updatedAt) VALUES
-("Calculus", "2017-11-21", "2017-12-22");
-INSERT INTO subjects (subjectName, createdAt, updatedAt) VALUES
-("Philosophy", "2017-10-21", "2017-12-22");
-
-SELECT * FROM userSubjects;
+SELECT * FROM availabilities; 
 
 
+USE tutor_db;
 
-desc Usersubjects;
+SET FOREIGN_KEY_CHECKS=0;
 
+TRUNCATE TABLE sessions;
 
-
-INSERT INTO userSubjects (subject, createdAt, updatedAt,
-UserId, subjectId) VALUES 
-(true, "2017-08-14", "2017-08-15", 1, 1);
-
+SELECT * FROM sessions; 
 
 
-INSERT INTO users (firstName, lastName, about, photo, email, role,
-createdAt, updatedAt) VALUES
-("John", "Smith", "aboutTest", "photoTest", "tutor", );
+USE tutor_db;
+
+SET FOREIGN_KEY_CHECKS=0;
+
+TRUNCATE TABLE subjects;
+
+SELECT * FROM subjects; 
 
 
-INSERT INTO users (firstName, lastName, about, photo, email, role,
-createdAt, updatedAt) VALUES
-("Jane", "Williams", "aboutTest", "photoTest", "student");
 
-INSERT INTO users (users (firstName, lastName, about, photo, email, role,
-createdAt, updatedAt) VALUES
-("Billy", "Brown", "aboutTest", "photoTest", "administrator");
+USE tutor_db;
 
-INSERT INTO users (users (firstName, lastName, about, photo, email, role,
-createdAt, updatedAt) VALUES
-("Lady", "Luck", "aboutTest", "photoTest", "tutor");
+SET FOREIGN_KEY_CHECKS=0;
 
-INSERT INTO Users (firstName, lastName, about, photo, email, role, createdAt, updatedAt) VALUES
-("rahul", "nallappa","rad learner and teacher", "this is a photo", "email.com",  "tutor", "2017-12-22", "2017-12-22");
+TRUNCATE TABLE userAvailabilities;
 
-INSERT INTO Users (firstName, lastName, about, photo, email, role, createdAt, updatedAt) VALUES
-("Bill", "Blue","something about", "this is a photo", "email1.com",  "tutor", "2017-12-12", "2017-11-22");
-
-INSERT INTO Users (firstName, lastName, about, photo, email, role, createdAt, updatedAt) VALUES
-("Jane", "Doe","something about jane", "this is a photo", "email2.com",  "tutor", "2017-10-12", "2017-11-12");
+SELECT * FROM userAvailabilities; 
 
 
-SELECT * FROM users
+USE tutor_db;
+
+SET FOREIGN_KEY_CHECKS=0;
+
+TRUNCATE TABLE users;
+
+SELECT * FROM users; 
 
 
+USE tutor_db;
+
+SET FOREIGN_KEY_CHECKS=0;
+
+TRUNCATE TABLE usersubjects;
+
+SELECT * FROM usersubjects; 

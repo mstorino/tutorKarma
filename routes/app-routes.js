@@ -38,10 +38,6 @@ module.exports = function(app) {
     res.render("admin")
   });
 
-  app.get("/user", function (req, res) {
-    res.render("dashboard", { firstName: req.user.firstName });
-  });
-
   // Each of the below routes just handles the HTML page that the user gets sent to.
   // Names subject to change!
   // May need to add reservations route, admin route etc

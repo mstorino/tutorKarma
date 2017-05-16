@@ -11,6 +11,7 @@ var passport = require("passport");
 var session = require("express-session");
 var env = require('dotenv').load();
 var exphbs = require("express-handlebars"); 
+var methodOverride = require("method-override");
 
 // Sets up the Express App
 // =============================================================
@@ -35,6 +36,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
+// Override with POST having ?_method=PUT
+app.use(methodOverride("_method"));
+
 // Static directory
 app.use(express.static("./public"));
 
@@ -49,6 +53,8 @@ app.use(passport.session()); // persistent login sessions
 
 // Routes =============================================================
 
+require("./routes/app-routes.js")(app);
+require("./routes/api-routes/user-routes.js")(app);
 // require("./routes/html-routes.js")(app);
 require("./routes/app-routes.js")(app);
 var authRoute = require("./routes/auth.js")(app, passport);

@@ -1,5 +1,13 @@
-SELECT DATABASE tutor_db;
+CREATE DATABASE tutor_db;
 
+USE tutor_db;
+
+INSERT INTO subjects (subjectName, createdAt, updatedAt) VALUES
+("Chemistry", "2017-12-22", "2017-12-22");
+INSERT INTO subjects (subjectName, createdAt, updatedAt) VALUES
+("Calculus", "2017-11-21", "2017-12-22");
+INSERT INTO subjects (subjectName, createdAt, updatedAt) VALUES
+("Philosophy", "2017-10-21", "2017-12-22");
 
 
 INSERT INTO Users (firstName, lastName, about, photo, email, role, createdAt, updatedAt) VALUES
@@ -19,14 +27,35 @@ INSERT INTO Users (firstName, lastName, about, photo, email, role, createdAt, up
    
 ("George", "Washington","something about", "this is a photo", "georgeWashington@email1.com",  "tutor", "2017-12-12", "2017-11-22");
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 055fb78968d45b7d7a5f5eaa616fb7ae9ab2ad90
 INSERT INTO availabilities (day, timeSlot, createdAt, updatedAt) VALUES
 ("Monday", "9:00 AM - 10:00 AM", "2017-12-13", "2017-12-22"),
 
 ("Monday", "10:00 AM - 11:00 AM", "2017-12-13", "2017-12-22"),
 
+<<<<<<< HEAD
 ("Monday", "11:00 AM - 12:00 PM", "2017-12-13", "2017-12-22"),
+=======
+INSERT INTO sessions (sessionState, createdAt, updatedAt, tutor_id, student_id, SubjectId, AvailabilityId) VALUES
+("scheduled", "2017-09-22", "2017-11-22", 1, 2, 1, 1);
+INSERT INTO sessions (sessionState, createdAt, updatedAt, tutor_id, student_id, SubjectId, AvailabilityId) VALUES
+("scheduled", "2017-05-03", "2017-03-22", 2, 1, 3, 3);
+INSERT INTO sessions (sessionState, createdAt, updatedAt, tutor_id, student_id, SubjectId, AvailabilityId) VALUES
+("scheduled", "2017-05-03", "2017-03-22", 2, 2, 2, 3);
+
+INSERT INTO useravailabilities (available, createdAt, updatedAt, UserId, AvailabilityId) VALUES
+(true, "2017-12-12", "2017-11-22", 1, 1);
+INSERT INTO useravailabilities (available, createdAt, updatedAt, UserId, AvailabilityId) VALUES
+(true, "2017-10-12", "2017-11-22", 1, 2);
+INSERT INTO useravailabilities (available, createdAt, updatedAt, UserId, AvailabilityId) VALUES
+(true, "2017-01-12", "2017-02-22",1, 3);
+
+
+>>>>>>> 055fb78968d45b7d7a5f5eaa616fb7ae9ab2ad90
 
 ("Monday", "12:00 PM - 1:00 PM", "2017-12-13", "2017-12-22"),
 
@@ -169,6 +198,7 @@ INSERT INTO availabilities (day, timeSlot, createdAt, updatedAt) VALUES
 
 
 
+<<<<<<< HEAD
 
 
 INSERT INTO subjects (subjectName, createdAt, updatedAt) VALUES
@@ -220,3 +250,5 @@ INSERT INTO useravailabilities (available, createdAt, updatedAt, UserId, Availab
 (true, "2017-10-12", "2017-11-22", 1, 2);
 INSERT INTO useravailabilities (available, createdAt, updatedAt, UserId, AvailabilityId) VALUES
 (true, "2017-01-12", "2017-02-22",1, 3);
+=======
+>>>>>>> 055fb78968d45b7d7a5f5eaa616fb7ae9ab2ad90

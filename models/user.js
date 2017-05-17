@@ -36,8 +36,20 @@ module.exports = function(sequelize, DataTypes) {
       	validate: {
         	len: [1]
       	}
-    },
+    }
 
+  },
+  {
+    classMethods: { //need to check alias documentation
+      associate: function(models) {
+        // A user_id, available_id and subject_id foreign keys are required or session entry cannot be made
+        User.belongsToMany(models.Subject, {
+          through: "UserSubject",
+          foreignKey: "tutor_id"
+        });
+      }
+    }
+      
   });
   return User;
 };

@@ -12,6 +12,17 @@ module.exports = function(sequelize, DataTypes) {
       	}
     }
     
+  },
+  {
+    classMethods: { 
+      associate: function(models) {
+        
+        Subject.belongsToMany(models.User, {
+          through: "UserSubject",
+          foreignKey: "subject_id"
+        });
+      }
+    }
   });
   return Subject;
 };

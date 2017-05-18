@@ -29,14 +29,32 @@ function parseTutorData (data) {
     console.log(selectedValue);
     for (var i = 0; i < allTutors.length; i++) {
       if (selectedValue == parseInt(allTutors[i].id)) {
-        $('#myModalLabel').html("<h4>" + allTutors[i].firstName + "</h4>");
-        showModal();
- 
-       }    
+        $('.modal-title').html("<h3>" + allTutors[i].firstName + "</h3>");
+        $('.modal-body').html("<h4>About:</h4><p>Tutor Mantra: " + allTutors[i].about + "</p>");
+        $('.modal-photo').html("<img src ='assets/img/tutor" + allTutors[i].id + ".jpg'>");
 
-      // console.log(allTutors[i].id);
+        if (allTutors[i].available == null){
+          $('.modal-avail').html("<p>Available to tutor today.</p>");
+        } 
+        
+        matchTutorSubjects(allTutors[i].SubjectId);
+
+        showModal();
+       }    
     }
 }
+
+function matchTutorSubjects (data) {
+  
+  for (var j = 0; j < allSubjects.length; j++) {
+    
+    if (data == allSubjects[j].id) {
+      // console.log(allSubjects[j].subjectName)
+      $('.modal-subj').html("<p>Subject: " + allSubjects[j].subjectName + "</p>");
+    }
+  }
+}
+
 
 function showModal(){
     tutorModal.modal('show');

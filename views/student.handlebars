@@ -33,23 +33,7 @@
     </div>
 
 </div> {{!-- end .searchDropDowns --}}
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel"></h4>
-      </div>
-      <div class="modal-body">
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        {{!-- <button type="button" class="btn btn-primary">Email Tutor</button> --}}
-      </div>
-    </div>
-  </div>
-</div>
+
 <!-- search results  -->
   <div class="container-fluid searchResults">
       <div class="row tutorRow">
@@ -81,29 +65,32 @@
 
 
       <!-- Modal -->
-            <div class="modal fade" id="myModal{{@index}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+           <div class="modal fade" id = "myModal" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                  <h4 class="modal-title" id="myModalLabel">
-                  Book a tutoring session with <span class="capitalize"> {{firstName}} {{lastName}}!</span> </h4>
-                </div> {{!-- end modal-header --}}
-                
-                <div class="modal-body">
+                  <h4 class="modal-title">Modal title</h4>
+                </div>
 
-                  <div> <span class="capitalize"> {{firstName}} </span> is available at the following times: </div>
-                  
-                </div> {{!-- end modal-body --}}
-                
+                <div class="row">
+                    <div class="modal-photo col-lg-4">
+                    </div>
+                    <div class="modal-body">
+                      <p>One fine body&hellip;</p>
+                    </div>
+                    <div class="modal-avail">
+                    </div>
+                    <div class="modal-subj">
+                    </div>
+                </div>
                 <div class="modal-footer">
-                  <button type="button" class="closeBtn btn btn-default" data-dismiss="modal">Close</button>
-                  <button type="button" class="closeBtn btn btn-primary">Submit request</button>
-                </div> {{!-- end modal footer --}}
-              </div> {{!-- end modal content --}}
-            </div> <!--closes modal div -->
-            
-          </div>
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Book This Tutor</button>
+                </div>
+              </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+          </div><!-- /.modal -->
   </div> {{!-- end searchResults --}}
   
 

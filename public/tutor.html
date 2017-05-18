@@ -1,70 +1,105 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
   
-    <title>tutorKarma | Tutor</title>
+    <title>tutorKarma</title>
 
-<!-- Favicon -->
-  <!-- <link rel="icon" type="image/ico" href="/assets/img/favicon.ico" sizes="32x32" /> -->
+   <!-- Favicon -->
+  <link rel="icon" type="image/ico" href="assets/img/favicon.ico" sizes="32x32" />
   
-<!--  Scripts: jQuery --> 
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-
-<!-- Bootstrap JS-->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-<!-- Bootstrap CSS -->
+  <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-<!-- Custom Stylesheet -->
+    <!-- Custom Stylesheet -->
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-
-
   
-<!-- Google Font -->
+  <!-- Google Font -->
   
-<!-- Responsive -->
+  <!-- Responsive -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 </head>
 <body>
+  
+  <!-- NAVIGATION -->
+<nav class="navbar navbar-default">
+  <div class="container-fluid headerWrapper">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+      <a class="navbar-brand" href="/">tutorKarma</a>
+    </div>
 
-<!-- MAIN CONTENT -->
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      
+      <ul class="nav navbar-nav navbar-right">
+        
+        <li>
+          <a href="/tutor" class="navList" role="button" aria-haspopup="true" aria-expanded="false"> <span class="glyphicon glyphicon-apple" aria-hidden="true"></span> Tutor </a>
+        </li>
+
+        <li class ="lastNav">
+          <a href="/student" class="navList" role="button" aria-haspopup="true" aria-expanded="false"> <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Student </a>
+        </li>
+
+        <li class ="lastNav">
+          <a href="/admin" class="navList" role="button" aria-haspopup="true" aria-expanded="false"> <span class="glyphicon glyphicon-apple" aria-hidden="true"></span> Admin </a>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+  <!-- Scripts: jQuery, Tether, Bootstrap JS-->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    
+  <!-- Bootstrap JS-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+
+            <!-- MAIN CONTENT -->
 <div class="container">
 
+
 <!-- form to collect tutor data -->
+  <h2> Want to become a tutor? Enter your information! </h2>
+  
+
 <div class="form">
     <h2> Want to become a tutor? Enter your information! </h2>
   <div class="input-group">
+
     <span class="input-group-addon" id="basic-addon1 firstname">First Name</span>
-      <input type="text" class="form-control" placeholder="First name" aria-describedby="basic-addon1">
-  </div> <!-- close first name input -->
-  <div class="input-group">
+      <input type="text" class="form-control" id="first-name" placeholder="First Name" aria-describedby="basic-addon1">
+  </div> close first name input
+  <div class="form-group">
     <span class="input-group-addon" id="basic-addon1 lastname">Last Name</span>
-    <input type="text" class="form-control" placeholder="Last name" aria-describedby="basic-addon1">
-  </div> <!-- close last name input -->
-<br>
-<form>
+    <input type="text" class="form-control" id="last-name" placeholder="Last Name" aria-describedby="basic-addon1">
+  </div> close last name input
+  <br>
+  
   <div class="form-group">
     <label for="inputlg">Please provide 1-3 sentences about yourself.</label>
-    <input class="form-control input-lg" id="inputlg about" type="text">
+    <textarea class="form-control" rows="5" id="about"></textarea>
   </div>
-</form>
-
-
-  <div class="input-group">
-    <span class="input-group-addon" id="basic-addon1 photo">Profile Picture</span>
-    <input type="text" class="form-control" placeholder="Profile Picture" aria-describedby="basic-addon1">
-  </div> <!-- close profile picture  -->
+  
+  
+  
+  
   <div class="input-group">
     <span class="input-group-addon" id="basic-addon1 email">Email</span>
-    <input type="text" class="form-control" placeholder="example@email.com" aria-describedby="basic-addon1">
-  </div> <!-- close email -->
+    <input type="text" class="form-control" id="email" placeholder="example@email.com" aria-describedby="basic-addon1">
+  </div> close email
   
-
+  
     <div class="input-group">
       <span class="input-group-addon">
         <input type="radio" aria-label="..." name="role" data-value="tutor"> Tutor
@@ -73,11 +108,11 @@
         <input type="radio" aria-label="..." name="role" data-value="student"> Student
       </span>
       
-    </div><!-- /input-group -->
-
+    </div>/input-group
+  
     <h3> Please select up to 3 subjects you will teach </h3>
-
-<div class="row subjectButtons">
+  
+  <div class="row subjectButtons">
     <span class="button col-md-2">
       <input type="radio" aria-label="..." data-value="Math"> Math 
     </span>
@@ -96,17 +131,35 @@
     <span class="button col-md-2">
       <input type="radio" aria-label="..." data-value="Economics"> Economics 
     </span>
-</div><!-- subject buttons-->
+  </div>subject buttons
+  
+  <button type="submit" class="btn btn-default btn-primary">Submit</button>
+  
+  </form> -->
+  <form id="author-form">
+    <input placeholder="First Name" id="first-name" type="text" />
+            
+    <button type="submit" class="btn btn-success">Create Author</button>
+                  
+  </form>
 
-<button type="submit" class="btn btn-default btn-primary">Submit</button>
-
-
-</div> <!-- close form div -->
 
 
 
 </div> <!-- closing container div  -->
 
+  
+</script>
 
+  
+  <footer class="footer">
+      <div class="container">
+        <p class="text-muted text-center">tutorKarma</p>
+      </div>
+  </footer>
+
+  
+
+    
 </body>
 </html>

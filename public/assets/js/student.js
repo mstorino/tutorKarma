@@ -1,84 +1,128 @@
+var selectedValue;
+var tutorModal = $('#myModal');
+var tutorModalBody = $('.modal-body');
+
 $(document).ready(function() {
-  // Getting references to the name inout and author container, as well as the table body
-  var nameInput = $("#author-name");
-  var authorList = $("tbody");
-  var authorContainer = $(".author-container");
-  // Adding event listeners to the form to create a new object, and the button to delete
-  // an Author
-  $(document).on("submit", "#author-form", handleAuthorFormSubmit);
-  $(document).on("click", ".delete-author", handleDeleteButtonPress);
-  // Getting the intiial list of Authors
-  getAuthors();
-  // A function to handle what happens when the form is submitted to create a new Author
-  function handleAuthorFormSubmit(event) {
+  
+  $('#sel1').on("change", handleTutorFormSubmit);
+ 
+  // $('.closeBtn').on("click", resetState);
+  $('#sel2').on("change", handleSubjectFormSubmit);
+
+  function handleTutorFormSubmit(event) {
     event.preventDefault();
-    // Don't do anything if the name fields hasn't been filled out
-    if (!nameInput.val().trim().trim()) {
+  
+    var selectBox = document.getElementById("sel1");
+    selectedValue = selectBox.options[selectBox.selectedIndex].value;
+
+    if (!selectedValue) {
+      return;
+    } else {
+      parseTutorData(allTutors);
+
+    }
+  
+  
+  };
+
+function parseTutorData (data) {
+    console.log(selectedValue);
+    for (var i = 0; i < allTutors.length; i++) {
+      if (selectedValue == parseInt(allTutors[i].id)) {
+        $('.modal-title').html("<h3>" + allTutors[i].firstName + "</h3>");
+        $('.modal-body').html("<h4>About</h4><p>Mantra: " + allTutors[i].about + "</p>");
+        $('.modal-photo').html("<img src ='assets/img/tutor" + allTutors[i].id + ".jpg'>");
+
+        if (allTutors[i].available == null){
+          $('.modal-avail').html("<p>Schedule: Available to tutor today.</p>");
+        } 
+        
+        matchTutorSubjects(allTutors[i].SubjectId);
+
+        showModal();
+       }    
+    }
+}
+
+function matchTutorSubjects (data) {
+  
+  for (var j = 0; j < allSubjects.length; j++) {
+    
+    if (data == allSubjects[j].id) {
+      // console.log(allSubjects[j].subjectName)
+      $('.modal-subj').html("<p>Subject: " + allSubjects[j].subjectName + "</p>");
+    }
+  }
+}
+
+
+function showModal(){
+    tutorModal.modal('show');
+    // resetState();
+    
+  }
+
+function resetState(){
+  selectedValue = 0;
+  $('#myModal').empty();
+  $('.modal-body').empty();
+}
+
+// ************* Subject Button
+
+var selectedValue2;
+var userIdSubjTutor = [];
+var tutorRow = "";
+
+function resetTutorsBySubject(){
+  selectedValue2 = 0;
+  userIdSubjTutor = [];
+  tutorRow = "";
+}
+
+function handleSubjectFormSubmit(event) {
+    event.preventDefault();
+    // console.log(allSubjects);
+    var selectBox2 = document.getElementById("sel2");
+    selectedValue2 = selectBox2.options[selectBox2.selectedIndex].value;
+
+    if (!selectedValue2) {
       return;
     }
-    // Calling the upsertAuthor function and passing in the value of the name input
-    upsertAuthor({
-      name: nameInput
-        .val()
-        .trim()
-    });
-  }
-  // A function for creating an author. Calls getAuthors upon completion
-  function upsertAuthor(authorData) {
-    $.post("/api/authors", authorData)
-      .then(getAuthors);
-  }
-  // Function for creating a new list row for authors
-  function createAuthorRow(authorData) {
-    console.log(authorData);
-    var newTr = $("<tr>");
-    newTr.data("author", authorData);
-    newTr.append("<td>" + authorData.name + "</td>");
-    newTr.append("<td># of posts will display when we learn joins in the next activity!</td>");
-    newTr.append("<td><a href='/blog?author_id=" + authorData.id + "'>Go to Posts</a></td>");
-    newTr.append("<td><a href='/cms?author_id=" + authorData.id + "'>Create a Post</a></td>");
-    newTr.append("<td><a style='cursor:pointer;color:red' class='delete-author'>Delete Author</a></td>");
-    return newTr;
-  }
-  // Function for retrieving authors and getting them ready to be rendered to the page
-  function getAuthors() {
-    $.get("/api/authors", function(data) {
-      var rowsToAdd = [];
-      for (var i = 0; i < data.length; i++) {
-        rowsToAdd.push(createAuthorRow(data[i]));
-      }
-      renderAuthorList(rowsToAdd);
-      nameInput.val("");
-    });
-  }
-  // A function for rendering the list of authors to the page
-  function renderAuthorList(rows) {
-    authorList.children().not(":last").remove();
-    authorContainer.children(".alert").remove();
-    if (rows.length) {
-      console.log(rows);
-      authorList.prepend(rows);
+    
+    parseTutorBySubject(allTutors)
+    resetTutorsBySubject();
+
+}
+
+
+function parseTutorBySubject (data) {
+  console.log(selectedValue2);
+    for (var i = 0; i < allTutors.length; i++) {
+      // console.log(parseInt(allTutors[i].SubjectId))
+      if (parseInt(selectedValue2) === parseInt(allTutors[i].SubjectId)) {
+        userIdSubjTutor.push(allTutors[i]);
+       }    
     }
-    else {
-      renderEmpty();
+  createTutorRow(userIdSubjTutor);
+}
+
+function createTutorRow(data) {
+    for (var i = 0; i < data.length; i++) {
+      tutorRow += "<div class='container tutorThumbnailContainer col-xs-6 col-md-3 col-lg-3'><div class='thumbnail tutorThumbnail'><img src ='assets/img/tutor" + data[i].id + ".jpg'><div class='tutorCaption'><h4 class = 'capitalize tutorName'>" + data[i].firstName + "</h4><p>" + data[i].about + "</p><a href='#' class='btn btn-default btn-sm capitalize bookTutorBtn' role='button'>Book" + data[i].firstName + "</a></div></div></div>"
     }
+    showTutorRow(tutorRow); 
+
   }
-  // Function for handling what to render when there are no authors
-  function renderEmpty() {
-    var alertDiv = $("<div>");
-    alertDiv.addClass("alert alert-danger");
-    alertDiv.html("You must create an Author before you can create a Post.");
-    authorContainer.append(alertDiv);
-  }
-  // Function for handling what happens when the delete button is pressed
-  function handleDeleteButtonPress() {
-    var listItemData = $(this).parent("td").parent("tr").data("author");
-    var id = listItemData.id;
-    $.ajax({
-      method: "DELETE",
-      url: "/api/authors/" + id
-    })
-    .done(getAuthors);
-  }
-});
-Add Comment Collapse
+
+
+function showTutorRow(data) {
+   $('.tutorRow').html(data);
+}
+
+
+
+// ************* Book Tutor Button
+
+
+}); 

@@ -32,9 +32,30 @@ body {
 	border-left: 1px solid grey;
 }
 
+
+/*BEGIN MAIN PAGE STYLING*/
 .jumbotron h1 {
-	color:#777777;
+	/*color:#58709e;*/
+	text-align: center;
 }
+
+.jumbotron {
+	/*background-color: #58709e;*/
+	background: url(../img/background1.jpg);
+	background-size: 1000px 500px;
+}
+
+.getStartBtn {
+	background-color: #58709e;
+}
+
+
+.panel-default > .panel-heading {
+  background-color: #a2ca8c;
+}
+
+/*END MAIN PAGE STYLE*/
+
 
 .footer {
     position: absolute;
@@ -55,9 +76,9 @@ body {
 .searchResults {
 	margin-top: 10px;
 	/*height: 300px;*/
-	border-color: black;
+	/*border-color: black;
 	border-width: 5px;
-	border-style: solid;
+	border-style: solid;*/
 	padding-right: 0px;
 	padding-left: 0px;
 }
@@ -74,7 +95,8 @@ body {
 
 .tutorName {
 	position: absolute;
-    top: 25px;
+    top: 6px;
+    left:12px;
     height: 35px;
     width: 35%;
     font-size: 2.1em;
@@ -82,6 +104,15 @@ body {
     letter-spacing: -0.5px;
     font-family: "HelveticaNeueHeavy","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
+
+.modal-photo img {
+	height: 160px;
+}
+
+.modal-body {
+	padding: 5px 0px 0px 0px;
+}
+
 
 /*.favoriteTutor {
 	border:none;
@@ -116,11 +147,46 @@ body {
 }
 
 /*STUDENT HTML FORMATTING*/
+.tutorRow {
+	margin-right: 0px;
+	margin-left:0px;
+}
+
+/*.tutorThumbnailContainer {
+	min-height: 600px;
+}*/
+
+.tutorCaption{
+	min-height: 106px;
+	padding:6px;
+}
+
+.tutorThumbnailContainer{
+	padding:2px;
+}
+
+.bookTutorBtn {
+	position:absolute;
+	bottom: 10px;
+}
 /*END STUDENT FORMATTING*/
 
 /*TUTOR HTML FORMATTING*/
 /*END TUTOR FORMATTING*/
 
+.CRUDCaption {
+	padding:10px;
+}
+.CRUDButtons{
+	padding-bottom:10px;
+}
+
+label.CRUDCheck {
+	padding-left: 40px;
+}
+.CRUDSubmit{
+	width:100%;
+}
 /* Extra small devices (phones, less than 768px) */
 /* No media query since this is the default in Bootstrap */
 

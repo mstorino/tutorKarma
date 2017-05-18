@@ -10,50 +10,86 @@ module.exports = function(app) {
   app.get("/student", function (req, res) {
    db.Subject.findAll({
    }).then(function(dbSubjects){
-    // [{id: 1, SubjectName: 'math'}]
-     // console.log(dbSubjects);
+    
      db.User.findAll({
+
         where: {
-         role: "tutor" 
+         available: null
         }
+
      }).then(function(dbTutors){
         res.render("student", {
         availSubject: dbSubjects,
         availTutor: dbTutors,
-      // console.log(dbTutors);
-      })
+        availTutorArray: JSON.stringify(dbTutors),
+        availSubjArray: JSON.stringify(dbSubjects)
+      
+        })
+      }); 
     });
-  
- 
   });
 
 
+  app.get("/tutor", function (req, res) {
+   db.Subject.findAll({
+   }).then(function(dbSubjects){
+      res.render("tutor", {
+        availSubject: dbSubjects
+      })
+    }); 
+  });
+
+
+app.get("/student/id", function (req, res) {
+   db.UserSubjects.findAll({
+   }).then(function(dbSubjects){
+    // [{id: 1, SubjectName: 'math'}]
+     // console.log(dbSubjects);
+     db.User.findAll({
+        
+     }).then(function(dbTutors){
+
+     });
+   });
  });
+
+// app.get("/student/id", function (req, res) {
+   
+//      db.User.findAll({
+//         where: {
+//          id: req.params.id 
+//         }
+//      }).then(function(dbSpecificTutor){
+//         res.render("student/id", {
+//         availTutor: dbSpecificTutor
+//       // console.log(dbTutors);
+
+        
+//       }); 
+//     });
+//   });
+
 
   app.get("/tutor", function (req, res) {
     res.render("tutor")
   });
 
   app.get("/admin", function (req, res) {
-    res.render("admin")
+   db.Subject.findAll({
+   }).then(function(dbSubjects){
+    
+     db.User.findAll({
+        
+     }).then(function(dbTutors){
+        res.render("admin", {
+        availSubject: dbSubjects,
+        availTutor: dbTutors,
+        availTutorArray: JSON.stringify(dbTutors),
+        availSubjArray: JSON.stringify(dbSubjects)
+      
+        })
+      }); 
+    });
   });
-  // Each of the below routes just handles the HTML page that the user gets sent to.
-  // Names subject to change!
-  // May need to add reservations route, admin route etc
-
-  // index route loads index.html
-  // app.get("/", function(req, res) {
-  //   res.sendFile(path.join(__dirname, "../public/index.html"));
-  // });
-
-  // students route loads student-manager.html
-  // app.get("/students", function(req, res) {
-  //   res.sendFile(path.join(__dirname, "../public/student-manager.html"));
-  // });
-
-  // tutors route loads tutor-manager.html
-  // app.get("/tutors", function(req, res) {
-  //   res.sendFile(path.join(__dirname, "../public/tutor-manager.html"));
-  // });
 
 };

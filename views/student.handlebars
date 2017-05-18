@@ -1,83 +1,100 @@
+<script type="text/javascript">var allTutors = {{{availTutorArray}}}</script>
+<script type="text/javascript">var allSubjects = {{{availSubjArray}}}</script>
 <!-- MAIN CONTENT -->
 <div class="container">
 
-<!-- search buttons  -->
- <!-- search by subject -->
-  <span class="dropdown">
-    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-      Search by Subject
-      <span class="caret"></span>
-    </button>
-    <ul class="dropdown-menu" aria-labelled by="dropdownMenu1">
-    {{#each availSubject}}
-      <li><a href="#"> {{subjectName}}</a></li>
-    {{/each}}
-    </ul>
 
-  </span> <!-- closes first dropdown span -->
- <!-- search by  -->
-  <span class="dropdown">
-    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-      Search by Tutor
-      <span class="caret"></span>
-    </button>
-    <ul class="dropdown-menu" aria-labelled by="dropdownMenu1">
-      {{#each availTutor}}
-        <li><a href="#"> {{firstName}}</a></li>
-      {{/each}}
-    </ul>
-  </span> <!-- closes first dropdown div -->
+
+<h2>Want to find a tutor?</h2>
+<h4>Search by subject or tutor:</h4> 
+<!-- search buttons  -->
+<!-- tutor search  -->
+<div class="row searchDropDowns">
+    <div class="form-group col-lg-6">
+      <label for="tutorValue">Tutor List:</label>
+      <select class="form-control capitalize" id="sel1">
+      <option class = "hi" value = 0></option>
+          {{#each availTutor}}
+            <option class = "hi" value = {{id}}>{{firstName}}</option>
+          {{/each}}
+      </select>
+    </div>
+
+    <!-- subject search  -->
+
+    <div class="form-group col-lg-6">
+      <label for="tutorValue">Subject List:</label>
+      <select class="form-control" id="sel2">
+      <option class = "hi" value = 0></option>
+          {{#each availSubject}}
+            <option class = "hi" value = {{id}}>{{subjectName}}</option>
+          {{/each}}
+      </select>
+    </div>
+
+</div> {{!-- end .searchDropDowns --}}
 
 <!-- search results  -->
   <div class="container-fluid searchResults">
-      <div class="row">
+      <div class="row tutorRow">
+      <h4 class = "tutorHeader">Our awesome tutors:</h4> 
 
        {{#each availTutor}}
-        <div class="tutorThumbnailContainer col-xs-6 col-md-3 col-lg-2">
+        <div class="container tutorThumbnailContainer col-xs-6 col-md-3 col-lg-3">
           <div class="thumbnail tutorThumbnail">
-            <img src="http://placehold.it/500x500/EEE">
-            <div class="caption">
+            <img src ="assets/img/tutor{{id}}.jpg"> 
+            {{!-- <img src="http://placehold.it/500x500/EEE"> --}}
+            <div class="tutorCaption">
              
-
+                
                 <h4 class = "capitalize tutorName">{{firstName}}</h4>
-                <p>{{about}}</p> 
+                <p>Mantra: {{about}}</p> 
               
+                
+                <a href="#" class="btn btn-primary btn-sm capitalize bookTutorBtn" role="button">Book {{firstName}}</a> 
+                
+            </div> {{!-- end caption --}}
 
-              <button type="button" class="btn btn-primary btn-xs bookTutor" data-toggle="modal" data-target="#myModal{{@index}}">
-              Book this tutor! 
-              </button>
+          </div>{{!--  endTutorThumbnail --}}
 
-              <!-- Modal -->
-            <div class="modal fade" id="myModal{{@index}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-            <div class="modal-dialog" role="document">
-            <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title" id="myModalLabel">
-              Book a tutoring session with <span class="capitalize"> {{firstName}} {{lastName}}!</span> </h4>
-            </div>
-            <div class="modal-body">
-
-              <div> <span class="capitalize"> {{firstName}} </span> is available at the following times: </div>
-              
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Submit request</button>
-            </div>
-            </div>
-            </div>
-            </div> <!--closes modal div -->
-            
-          </div>
-
-        </div>
-
-      </div>
+        </div> {{!-- end tutorThumbnailContainer --}}
       {{/each}}
-  </div> <!-- close .searchResults div  -->
+  
+      
+      </div> <!-- close .tutorRow div  -->
 
-<script src="assets/js/rating.js"></script> 
+
+      <!-- Modal -->
+           <div class="modal fade" id = "myModal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title">Modal title</h4>
+                </div>
+
+                <div class="row">
+                    <div class="modal-photo col-lg-4">
+                    </div>
+                    <div class="modal-body">
+                      <p>One fine body&hellip;</p>
+                    </div>
+                    <div class="modal-avail">
+                    </div>
+                    <div class="modal-subj">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Book This Tutor</button>
+                </div>
+              </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+          </div><!-- /.modal -->
+  </div> {{!-- end searchResults --}}
+  
+
+<script src="assets/js/student.js"></script> 
 
 
 </div> <!-- close container div  -->

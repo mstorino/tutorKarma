@@ -1,7 +1,10 @@
 
+CREATE DATABASE tutor_db;
 
 USE tutor_db;
 
+
+/*
 SET FOREIGN_KEY_CHECKS=0;
 
 TRUNCATE TABLE availabilities;
@@ -52,4 +55,4 @@ SET FOREIGN_KEY_CHECKS=0;
 
 TRUNCATE TABLE usersubjects;
 
-SELECT * FROM usersubjects; 
+SELECT * FROM usersubjects; */

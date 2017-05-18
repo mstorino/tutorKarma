@@ -1,3 +1,5 @@
+<script type="text/javascript">var allTutors = {{{availTutorArray}}}</script>
+<script type="text/javascript">var allSubjects = {{{availSubjArray}}}</script>
 <!-- MAIN CONTENT -->
 <div class="container">
 
@@ -65,38 +67,8 @@
                 <p>{{about}}</p> 
               
 
-              <a href="#" class="btn btn-default btn-xs capitalize" role="button">Meet {{firstName}}</a> 
+              <a href="#" class="btn btn-default btn-xs capitalize" role="button">Book {{firstName}}</a> 
             </div> {{!-- end caption --}}
-
-
-              <button type="button" class="btn btn-primary btn-xs bookTutor" data-toggle="modal" data-target="#myModal{{@index}}">
-              Book this tutor! 
-              </button>
-
-              <!-- Modal -->
-            <div class="modal fade" id="myModal{{@index}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-            <div class="modal-dialog" role="document">
-            <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title" id="myModalLabel">
-              Book a tutoring session with <span class="capitalize"> {{firstName}} {{lastName}}!</span> </h4>
-            </div>
-            <div class="modal-body">
-
-              <div> <span class="capitalize"> {{firstName}} </span> is available at the following times: </div>
-              
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Submit request</button>
-            </div>
-            </div>
-            </div>
-            </div> <!--closes modal div -->
-            
-          </div>
-
 
           </div>{{!--  endTutorThumbnail --}}
 
@@ -105,7 +77,35 @@
   
       
       </div> <!-- close .tutorRow div  -->
-        <div class="agenda">
+
+
+      <!-- Modal -->
+            <div class="modal fade" id="myModal{{@index}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title" id="myModalLabel">
+                  Book a tutoring session with <span class="capitalize"> {{firstName}} {{lastName}}!</span> </h4>
+                </div> {{!-- end modal-header --}}
+                
+                <div class="modal-body">
+
+                  <div> <span class="capitalize"> {{firstName}} </span> is available at the following times: </div>
+                  
+                </div> {{!-- end modal-body --}}
+                
+                <div class="modal-footer">
+                  <button type="button" class="closeBtn btn btn-default" data-dismiss="modal">Close</button>
+                  <button type="button" class="closeBtn btn btn-primary">Submit request</button>
+                </div> {{!-- end modal footer --}}
+              </div> {{!-- end modal content --}}
+            </div> <!--closes modal div -->
+            
+          </div>
+
+
+      {{!--   <div class="agenda">
           <div class="table-responsive">
               <table class="table table-condensed table-bordered">
                   <thead>
@@ -203,7 +203,7 @@
                   </tbody>
               </table>
           </div>
-    </div> {{!-- end .agenda --}}
+    </div> {{!-- end .agenda --}} --}}
   </div> {{!-- end searchResults --}}
   
 

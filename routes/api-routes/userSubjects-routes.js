@@ -3,14 +3,14 @@ var db = require("../../models");
 // =============================================================
 module.exports = function(app) {
   app.get("/api/usersubjects", function(req, res) {
-    db.UserSubject.findAll({
+    db.Subject.findAll({
     }).then(function(dbUserSubject) {
       res.json(dbUserSubject);
     });
   });
 
   app.get("/api/usersubjects/:SubjectId", function(req, res) {
-    db.UserSubject.findAll({
+    db.Subject.findAll({
     	where: {
     		SubjectId: req.params.SubjectId
     	}

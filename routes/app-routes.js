@@ -13,9 +13,7 @@ module.exports = function(app) {
     // [{id: 1, SubjectName: 'math'}]
      // console.log(dbSubjects);
      db.User.findAll({
-        where: {
-         role: "tutor" 
-        }
+        
      }).then(function(dbTutors){
         res.render("student", {
         availSubject: dbSubjects,
@@ -26,16 +24,23 @@ module.exports = function(app) {
     });
   });
 
+  app.get("/tutor", function (req, res) {
+   db.Subject.findAll({
+   }).then(function(dbSubjects){
+      res.render("tutor", {
+        availSubject: dbSubjects
+      })
+    }); 
+  });
+
+
 app.get("/student/id", function (req, res) {
    db.UserSubjects.findAll({
    }).then(function(dbSubjects){
     // [{id: 1, SubjectName: 'math'}]
      // console.log(dbSubjects);
      db.User.findAll({
-        where: {
-         role: "tutor" 
-
-        }
+        
      }).then(function(dbTutors){
         
       console.log(dbTutors);

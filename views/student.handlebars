@@ -10,7 +10,7 @@
 <!-- search buttons  -->
 <!-- tutor search  -->
 <div class="row searchDropDowns">
-    <div class="form-group col-lg-6">
+    <div class="form-group col-lg-4">
       <label for="tutorValue">Tutor List:</label>
       <select class="form-control capitalize" id="sel1">
       <option class = "hi" value = 0></option>
@@ -22,7 +22,7 @@
 
     <!-- subject search  -->
 
-    <div class="form-group col-lg-6">
+    <div class="form-group col-lg-4">
       <label for="tutorValue">Subject List:</label>
       <select class="form-control" id="sel2">
       <option class = "hi" value = 0></option>
@@ -31,6 +31,19 @@
           {{/each}}
       </select>
     </div>
+
+    <!-- avail search  -->
+    <div class="form-group col-lg-4">
+      <label for="tutorValue">Avail List:</label>
+      <select class="form-control capitalize" id="sel3">
+      <option class = "hi" value = 0></option>
+          {{#each availTutor}}
+            <option class = "hi" value = {{id}}>{{firstName}}</option>
+          {{/each}}
+      </select>
+    </div>
+
+    
 
 </div> {{!-- end .searchDropDowns --}}
 
@@ -51,7 +64,7 @@
                 <p>Mantra: {{about}}</p> 
               
                 
-                <a href="#" class="btn btn-primary btn-sm capitalize bookTutorBtn" role="button">Book {{firstName}}</a> 
+                <a href="#" class="btn btn-primary btn-sm capitalize bookTutorBtn" value= {{id}} role="button">Book {{firstName}}</a> 
                 
             </div> {{!-- end caption --}}
 
@@ -86,7 +99,7 @@
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary">Book This Tutor</button>
+                  <button type="button" id = "bookTutorBtn6" class="btn btn-primary bookBtn">Book This Tutor</button>
                 </div>
               </div><!-- /.modal-content -->
             </div><!-- /.modal-dialog -->
@@ -95,6 +108,7 @@
   
 
 <script src="assets/js/student.js"></script> 
+<script src="assets/js/updateAvail.js"></script> 
 
 
 </div> <!-- close container div  -->

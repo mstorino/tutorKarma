@@ -25,7 +25,6 @@ module.exports = function(app) {
       }); 
     });
   });
- };
 
 app.get("/student/id", function (req, res) {
    
@@ -41,25 +40,7 @@ app.get("/student/id", function (req, res) {
       }); 
     });
   });
-// app.get("/availabilities/:userid", function (req, res) {
-//      db.UserAvailability.findAll({
-//       where: {
-//         id: req.params.userid
-//       }}).then(function(dbUserAvailabilities){
-        
-//         availabilitiesIds = dbUserAvailabilities
 
-//         db.Availability.findAll({
-//           where[]
-//         }).then(function(dbAvailabilities){
-//           res.render("student", {
-//           userAvailabilities: dbAvailabilities
-      
-//       }) 
-//     });console.log(dbAvailabilities);
-//   });
-//  });
-// });
 
   app.get("/tutor", function (req, res) {
     res.render("tutor")

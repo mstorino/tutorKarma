@@ -12,6 +12,17 @@ module.exports = function(sequelize, DataTypes) {
       	}
     }
     
-  });
+  },
+  {
+    classMethods: {
+        associate: function(models) {
+          // Associating subjects with users
+          // When a subject is deleted (never), also delete any associated tutors
+          Subject.hasMany(models.User, {
+            onDelete: "cascade"
+          });
+        }
+      }
+    });
   return Subject;
 };

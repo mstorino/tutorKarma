@@ -5,11 +5,11 @@ module.exports = function(sequelize, DataTypes) {
   var User = sequelize.define("User", {
     // Giving the User model a name of type STRING and a role of type STRING
     firstName: {
-    	type: DataTypes.STRING,
-    	allowNull: false,
-      	validate: {
-        	len: [1]
-      	}
+      type: DataTypes.STRING,
+      allowNull: false,
+        validate: {
+          len: [1]
+        }
     },
     lastName: {
       type: DataTypes.STRING,
@@ -21,23 +21,29 @@ module.exports = function(sequelize, DataTypes) {
     about: {
       type: DataTypes.TEXT,
     },
-    photo: {
-      type: DataTypes.STRING,
-    },
     email: {
       type: Sequelize.STRING,
       validate: {
         isEmail: true
       }
     },
-    role: {
-    	type: DataTypes.STRING,
-    	allowNull: false,
-      	validate: {
-        	len: [1]
-      	}
-    },
+    available: {
+      type: DataTypes.BOOLEAN,
 
-  });
+    }    
+
+  },
+    {
+      classMethods: {
+        associate: function(models) {
+          // A subject (foreignKey) is required or a tutor can't be created
+          Subject.belongsTo(models.User, {
+            foreignKey: {
+              allowNull: false
+            }
+          });
+        }
+      }
+    });
   return User;
 };

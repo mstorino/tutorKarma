@@ -1,4 +1,3 @@
-
 USE tutor_db;
 
 INSERT INTO subjects (subjectName, createdAt, updatedAt) VALUES

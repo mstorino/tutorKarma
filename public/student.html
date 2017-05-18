@@ -1,96 +1,293 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
   
-    <title>tutorKarma | Student</title>
+    <title>tutorKarma</title>
 
-<!-- Favicon -->
-  <!-- <link rel="icon" type="image/ico" href="/assets/img/favicon.ico" sizes="32x32" /> -->
+   <!-- Favicon -->
+  <link rel="icon" type="image/ico" href="assets/img/favicon.ico" sizes="32x32" />
   
-<!--  Scripts: jQuery --> 
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-
-<!-- Bootstrap JS-->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-<!-- Bootstrap CSS -->
+  <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-<!-- Custom Stylesheet -->
+    <!-- Custom Stylesheet -->
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
   
-<!-- Google Font -->
+  <!-- Google Font -->
   
-<!-- Responsive -->
+  <!-- Responsive -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 </head>
 <body>
+  
+  <!-- NAVIGATION -->
+<nav class="navbar navbar-default">
+  <div class="container-fluid headerWrapper">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+      <a class="navbar-brand" href="/">tutorKarma</a>
+    </div>
 
-<!-- MAIN CONTENT -->
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      
+      <ul class="nav navbar-nav navbar-right">
+        
+        <li>
+          <a href="/tutor" class="navList" role="button" aria-haspopup="true" aria-expanded="false"> <span class="glyphicon glyphicon-apple" aria-hidden="true"></span> Tutor </a>
+        </li>
+
+        <li class ="lastNav">
+          <a href="/student" class="navList" role="button" aria-haspopup="true" aria-expanded="false"> <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Student </a>
+        </li>
+
+        <li class ="lastNav">
+          <a href="/admin" class="navList" role="button" aria-haspopup="true" aria-expanded="false"> <span class="glyphicon glyphicon-apple" aria-hidden="true"></span> Admin </a>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+  <!-- Scripts: jQuery, Tether, Bootstrap JS-->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    
+  <!-- Bootstrap JS-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+
+            <!-- MAIN CONTENT -->
 <div class="container">
 
+
+
+<h2>Want to find a tutor?</h2>
+<h4>Search by subject or tutor:</h4> 
 <!-- search buttons  -->
- <!-- search by subject -->
-  <span class="dropdown">
-    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-      Search by Subject
-      <span class="caret"></span>
-    </button>
-    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-      <li><a href="#"> 1</a></li>
-      <li><a href="#"> 2 </a></li>
-      <li><a href="#"> 3 </a></li>
-    </ul>
-  </span> <!-- closes first dropdown span -->
- <!-- search by  -->
-  <span class="dropdown">
-    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-      Search by Name
-      <span class="caret"></span>
-    </button>
-    <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-      <li><a href="#"> 1</a></li>
-      <li><a href="#"> 2 </a></li>
-      <li><a href="#"> 3 </a></li>
-      <li><a href="#"> 4 </a></li>
-    </ul>
-  </span> <!-- closes first dropdown div -->
+<!-- tutor search  -->
+<div class="row searchDropDowns">
+    <div class="form-group col-lg-6">
+      <label for="tutorValue">Tutor List:</label>
+      <select class="form-control capitalize" id="sel1">
+      <option class = "hi" value = 0></option>
+          {{#each availTutor}}
+            <option class = "hi" value = {{id}}>{{firstName}}</option>
+          {{/each}}
+      </select>
+    </div>
 
-<!-- search results  -->
-  <div class="container searchResults col-md-10">
-      <h1> List search results here </h1>
-  </div>
+    <!-- subject search  -->
 
+    <div class="form-group col-lg-6">
+      <label for="tutorValue">Subject List:</label>
+      <select class="form-control" id="sel2">
+      <option class = "hi" value = 0></option>
+          {{#each availSubject}}
+            <option class = "hi" value = {{id}}>{{subjectName}}</option>
+          {{/each}}
+      </select>
+    </div>
 
-
-<div class="modal fade">
+</div> <!-- {{!end .searchDropDowns }} -->
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel"></h4>
       </div>
       <div class="modal-body">
-        <p>Modal body text goes here.</p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Save changes</button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        {{!-- <button type="button" class="btn btn-primary">Email Tutor</button> --}}
       </div>
     </div>
   </div>
 </div>
+<!-- search results  -->
+  <div class="container-fluid searchResults">
+      <div class="row tutorRow">
+      <h4 class = "tutorHeader">Our awesome tutors:</h4> 
 
+       {{#each availTutor}}
+        <div class="tutorThumbnailContainer col-xs-6 col-md-3 col-lg-3">
+          <div class="thumbnail tutorThumbnail">
+            <img src ="assets/img/tutor{{id}}.jpg"> 
+            {{!-- <img src="http://placehold.it/500x500/EEE"> --}}
+            <div class="caption">
+             
+
+                <h4 class = "capitalize tutorName">{{firstName}}</h4>
+                <p>{{about}}</p> 
+              
+
+              <a href="#" class="btn btn-default btn-xs capitalize" role="button">Meet {{firstName}}</a> 
+            </div> {{!-- end caption --}}
+
+
+              <button type="button" class="btn btn-primary btn-xs bookTutor" data-toggle="modal" data-target="#myModal{{@index}}">
+              Book this tutor! 
+              </button>
+
+              <!-- Modal -->
+            <div class="modal fade" id="myModal{{@index}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" id="myModalLabel">
+              Book a tutoring session with <span class="capitalize"> {{firstName}} {{lastName}}!</span> </h4>
+            </div>
+            <div class="modal-body">
+
+              <div> <span class="capitalize"> {{firstName}} </span> is available at the following times: </div>
+              
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Submit request</button>
+            </div>
+            </div>
+            </div>
+            </div> <!--closes modal div -->
+            
+          </div>
+
+
+          </div><!-- {{!  endTutorThumbnail }} -->
+
+        </div> <!-- {{!end tutorThumbnailContainer }} -->
+
+  
+      
+      </div> <!-- close .tutorRow div  -->
+        <div class="agenda">
+          <div class="table-responsive">
+              <table class="table table-condensed table-bordered">
+                  <thead>
+                      <tr>
+                          <th>Date</th>
+                          <th>Time</th>
+                          <th>Tutor</th>
+                          <th>Book Tutor</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <!-- Single event in a single day -->
+                      <tr>
+                          <td class="agenda-date" class="active" rowspan="1">
+                              <div class="dayofmonth">26</div>
+                              <div class="dayofweek">Saturday</div>
+                              <div class="shortdate text-muted">July, 2014</div>
+                          </td>
+                          <td class="agenda-time">
+                              5:30 AM
+                          </td>
+                          <td class="agenda-events">
+                              <div class="agenda-event">
+                                  <i class="glyphicon glyphicon-repeat text-muted"></i> 
+                                  Fishing
+                              </div>
+                          </td>
+                          <td class="bookTime">
+                             
+                                <button type="button" class="btn btn-default btn-xs" aria-haspopup="true" aria-expanded="false">
+                                Book Now! 
+                                </button>
+  
+                          </td>
+                          
+                      </tr>
+                      
+                      <!-- Multiple events in a single day (note the rowspan) -->
+                      <tr>
+                          <td class="agenda-date" class="active" rowspan="3">
+                              <div class="dayofmonth">24</div>
+                              <div class="dayofweek">Thursday</div>
+                              <div class="shortdate text-muted">July, 2014</div>
+                          </td>
+                          <td class="agenda-time">
+                              8:00 - 9:00 AM 
+                          </td>
+                          <td class="agenda-events">
+                              <div class="agenda-event">
+                                  Doctor's Appointment
+                              </div>
+                          </td>
+                          <td class="bookTime">
+                             
+                                <button type="button" class="btn btn-default btn-xs" aria-haspopup="true" aria-expanded="false">
+                                Book Now! 
+                                </button>
+  
+                          </td>
+                      </tr>
+                      <tr>
+                          <td class="agenda-time">
+                              10:15 AM - 12:00 PM 
+                          </td>
+                          <td class="agenda-events">
+                              <div class="agenda-event">
+                                  Meeting with executives
+                              </div>
+                          </td>
+                          <td class="bookTime">
+                             
+                                <button type="button" class="btn btn-default btn-xs" aria-haspopup="true" aria-expanded="false">
+                                Book Now! 
+                                </button>
+  
+                          </td>
+                      </tr>
+                      <tr>
+                          <td class="agenda-time">
+                              7:00 - 9:00 PM
+                          </td>
+                          <td class="agenda-events">
+                              <div class="agenda-event">
+                                  Aria's dance recital
+                              </div>
+                          </td>
+                          <td class="bookTime">
+                             
+                                <button type="button" class="btn btn-default btn-xs" aria-haspopup="true" aria-expanded="false">
+                                Book Now! 
+                                </button>
+  
+                          </td>
+                      </tr>
+                  </tbody>
+              </table>
+          </div>
+    </div> <!-- {{! end .agenda }} -->
+  </div> <!-- {{!end searchResults }} -->
+  
+
+<script src="assets/js/student.js"></script> 
 
 
 </div> <!-- close container div  -->
 
+  
+  <footer class="footer">
+      <div class="container">
+        <p class="text-muted text-center">tutorKarma</p>
+      </div>
+  </footer>
 
+  
+
+    
 </body>
 </html>

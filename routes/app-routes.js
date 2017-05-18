@@ -1,4 +1,6 @@
 var db = require("../models");
+
+
 // Routes
 // =============================================================
 module.exports = function(app) {
@@ -52,6 +54,20 @@ app.get("/student/id", function (req, res) {
      });
    });
  });
+
+app.post("/tutor", function(req, res) {
+  console.log(req.body)
+  console.log(req.body.SubjectId);
+  db.User.create({
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
+    email: req.body.email,
+    about: req.body.about,
+    SubjectId: req.body.SubjectId
+  }).then(function() {
+    res.redirect("/tutor");
+  });
+});
 
 // app.get("/student/id", function (req, res) {
    

@@ -7,6 +7,7 @@
 var express = require("express");
 var exphbs = require("express-handlebars");
 var bodyParser = require("body-parser");
+var methodOverride = require("method-override");
 
 // Sets up the Express App
 // =============================================================
@@ -36,6 +37,9 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 // Static directory
 app.use(express.static("./public"));
+
+// Override with POST having ?_method=PUT
+app.use(methodOverride("_method"));
 
 // Routes =============================================================
 

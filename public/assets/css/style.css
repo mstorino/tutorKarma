@@ -153,6 +153,19 @@ body {
 	margin-right: 0px;
 	margin-left:0px;
 }
+
+/*.tutorThumbnailContainer {
+	min-height: 600px;
+}*/
+
+.tutorCaption{
+	min-height: 106px;
+}
+
+.bookTutorBtn {
+	position:absolute;
+	bottom: 10px;
+}
 /*END STUDENT FORMATTING*/
 
 /*TUTOR HTML FORMATTING*/

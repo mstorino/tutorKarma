@@ -56,18 +56,19 @@
       <h4 class = "tutorHeader">Our awesome tutors:</h4> 
 
        {{#each availTutor}}
-        <div class="tutorThumbnailContainer col-xs-6 col-md-3 col-lg-3">
+        <div class="container tutorThumbnailContainer col-xs-6 col-md-3 col-lg-3">
           <div class="thumbnail tutorThumbnail">
             <img src ="assets/img/tutor{{id}}.jpg"> 
             {{!-- <img src="http://placehold.it/500x500/EEE"> --}}
-            <div class="caption">
+            <div class="tutorCaption">
              
-
+                
                 <h4 class = "capitalize tutorName">{{firstName}}</h4>
                 <p>{{about}}</p> 
               
-
-              <a href="#" class="btn btn-default btn-xs capitalize" role="button">Book {{firstName}}</a> 
+                
+                <a href="#" class="btn btn-default btn-sm capitalize bookTutorBtn" role="button">Book {{firstName}}</a> 
+                
             </div> {{!-- end caption --}}
 
           </div>{{!--  endTutorThumbnail --}}
@@ -203,7 +204,7 @@
                   </tbody>
               </table>
           </div>
-    </div> {{!-- end .agenda --}} --}}
+    </div> end .agenda  --}}
   </div> {{!-- end searchResults --}}
   
 

@@ -14,7 +14,7 @@ module.exports = function(app) {
      // console.log(dbSubjects);
      db.User.findAll({
         where: {
-         role: "tutor" 
+         available: 1
         }
      }).then(function(dbTutors){
         res.render("student", {
@@ -27,18 +27,15 @@ module.exports = function(app) {
   });
 
 app.get("/student/id", function (req, res) {
-   db.UserSubjects.findAll({
-   }).then(function(dbSubjects){
-    // [{id: 1, SubjectName: 'math'}]
-     // console.log(dbSubjects);
+   
      db.User.findAll({
         where: {
-         role: "tutor" 
-
+         id: req.params.id 
         }
-     }).then(function(dbTutors){
-        
-      console.log(dbTutors);
+     }).then(function(dbSpecificTutor){
+        res.render("student/id", {
+        availTutor: dbSpecificTutor
+      // console.log(dbTutors);
         
       }); 
     });

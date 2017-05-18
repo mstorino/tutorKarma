@@ -1,45 +1,57 @@
+<script type="text/javascript">var allTutors = {{{availTutorArray}}}</script>
+<script type="text/javascript">var allSubjects = {{{availSubjArray}}}</script>
 <!-- MAIN CONTENT -->
 <div class="container">
 
-<!-- add a tutor  -->
-<div class="col-md-12">
- <button type="button" class="btn btn-lrg btn-primary addTutor">
-   Add a tutor
- </button>
-</div>
 
-<!-- SEARCH BUTTONS  -->
- <!-- search by subject -->
-  <span class="dropdown">
-    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-      Search by Subject
-      <span class="caret"></span>
-    </button>
-    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-      <li><a href="#"> 1</a></li>
-      <li><a href="#"> 2 </a></li>
-      <li><a href="#"> 3 </a></li>
-    </ul>
-  </span> <!-- closes first dropdown span -->
- <!-- search by  -->
-  <span class="dropdown">
-    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-      Search by Name
-      <span class="caret"></span>
-    </button>
-    <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-      <li><a href="#"> 1</a></li>
-      <li><a href="#"> 2 </a></li>
-      <li><a href="#"> 3 </a></li>
-      <li><a href="#"> 4 </a></li>
-    </ul>
-  </span> <!-- closes first dropdown div -->
 
-<!-- search results  -->
-  <div class="container searchResults col-md-10">
-      <h1> List search results here </h1>
-  </div>
+<h2>Welcome Admin</h2>
+<h4>Update and delete tutors below:</h4>
 
+  <div class="container-fluid searchResults">
+      <div class="row tutorRow">
+      
+
+       {{#each availTutor}}
+        <div class="container tutorThumbnailContainer col-xs-6 col-md-3 col-lg-3">
+          <div class="thumbnail tutorThumbnail">
+            <img src ="assets/img/tutor{{id}}.jpg"> 
+            {{!-- <img src="http://placehold.it/500x500/EEE"> --}}
+            <div class="tutorCaption CRUDCaption">
+             
+                
+                <h4 class = "capitalize tutorName">{{firstName}}</h4>
+
+  <div class="row CRUDButtons">
+      <div class="checkbox col-lg-12">
+        <label>
+          <input type="checkbox" data-value="deleteTutor"> Delete
+        </label>
+        <label class="CRUDCheck">
+          <input type="checkbox" data-value="unavailabileTutor"> Unavailable
+        </label>
+      </div>
+   
+   </div><!-- CRUD buttons-->
+  <button type="submit" class="btn btn-danger CRUDSubmit">Update</button> 
+                
+            </div> {{!-- end caption --}}
+
+          </div>{{!--  endTutorThumbnail --}}
+
+        </div> {{!-- end tutorThumbnailContainer --}}
+      {{/each}}
+  
+      
+      </div> <!-- close .tutorRow div  -->
+
+
+      
+
+  </div> {{!-- end searchResults --}}
+  
+
+<script src="assets/js/student.js"></script> 
 
 
 </div> <!-- close container div  -->

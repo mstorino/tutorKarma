@@ -1,3 +1,5 @@
+<script type="text/javascript">var allTutors = {{{availTutorArray}}}</script>
+<script type="text/javascript">var allSubjects = {{{availSubjArray}}}</script>
 <!-- MAIN CONTENT -->
 <div class="container">
 
@@ -31,72 +33,27 @@
     </div>
 
 </div> {{!-- end .searchDropDowns --}}
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel"></h4>
-      </div>
-      <div class="modal-body">
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        {{!-- <button type="button" class="btn btn-primary">Email Tutor</button> --}}
-      </div>
-    </div>
-  </div>
-</div>
+
 <!-- search results  -->
   <div class="container-fluid searchResults">
       <div class="row tutorRow">
       <h4 class = "tutorHeader">Our awesome tutors:</h4> 
 
        {{#each availTutor}}
-        <div class="tutorThumbnailContainer col-xs-6 col-md-3 col-lg-3">
+        <div class="container tutorThumbnailContainer col-xs-6 col-md-3 col-lg-3">
           <div class="thumbnail tutorThumbnail">
             <img src ="assets/img/tutor{{id}}.jpg"> 
             {{!-- <img src="http://placehold.it/500x500/EEE"> --}}
-            <div class="caption">
+            <div class="tutorCaption">
              
-
+                
                 <h4 class = "capitalize tutorName">{{firstName}}</h4>
-                <p>{{about}}</p> 
+                <p>Mantra: {{about}}</p> 
               
-
-              <a href="#" class="btn btn-default btn-xs capitalize" role="button">Meet {{firstName}}</a> 
+                
+                <a href="#" class="btn btn-primary btn-sm capitalize bookTutorBtn" role="button">Book {{firstName}}</a> 
+                
             </div> {{!-- end caption --}}
-
-
-              <button type="button" class="btn btn-primary btn-xs bookTutor" data-toggle="modal" data-target="#myModal{{@index}}">
-              Book this tutor! 
-              </button>
-
-              <!-- Modal -->
-            <div class="modal fade" id="myModal{{@index}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-            <div class="modal-dialog" role="document">
-            <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title" id="myModalLabel">
-              Book a tutoring session with <span class="capitalize"> {{firstName}} {{lastName}}!</span> </h4>
-            </div>
-            <div class="modal-body">
-
-              <div> <span class="capitalize"> {{firstName}} </span> is available at the following times: </div>
-              
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Submit request</button>
-            </div>
-            </div>
-            </div>
-            </div> <!--closes modal div -->
-            
-          </div>
-
 
           </div>{{!--  endTutorThumbnail --}}
 
@@ -105,105 +62,35 @@
   
       
       </div> <!-- close .tutorRow div  -->
-        <div class="agenda">
-          <div class="table-responsive">
-              <table class="table table-condensed table-bordered">
-                  <thead>
-                      <tr>
-                          <th>Date</th>
-                          <th>Time</th>
-                          <th>Tutor</th>
-                          <th>Book Tutor</th>
-                      </tr>
-                  </thead>
-                  <tbody>
-                      <!-- Single event in a single day -->
-                      <tr>
-                          <td class="agenda-date" class="active" rowspan="1">
-                              <div class="dayofmonth">26</div>
-                              <div class="dayofweek">Saturday</div>
-                              <div class="shortdate text-muted">July, 2014</div>
-                          </td>
-                          <td class="agenda-time">
-                              5:30 AM
-                          </td>
-                          <td class="agenda-events">
-                              <div class="agenda-event">
-                                  <i class="glyphicon glyphicon-repeat text-muted"></i> 
-                                  Fishing
-                              </div>
-                          </td>
-                          <td class="bookTime">
-                             
-                                <button type="button" class="btn btn-default btn-xs" aria-haspopup="true" aria-expanded="false">
-                                Book Now! 
-                                </button>
-  
-                          </td>
-                          
-                      </tr>
-                      
-                      <!-- Multiple events in a single day (note the rowspan) -->
-                      <tr>
-                          <td class="agenda-date" class="active" rowspan="3">
-                              <div class="dayofmonth">24</div>
-                              <div class="dayofweek">Thursday</div>
-                              <div class="shortdate text-muted">July, 2014</div>
-                          </td>
-                          <td class="agenda-time">
-                              8:00 - 9:00 AM 
-                          </td>
-                          <td class="agenda-events">
-                              <div class="agenda-event">
-                                  Doctor's Appointment
-                              </div>
-                          </td>
-                          <td class="bookTime">
-                             
-                                <button type="button" class="btn btn-default btn-xs" aria-haspopup="true" aria-expanded="false">
-                                Book Now! 
-                                </button>
-  
-                          </td>
-                      </tr>
-                      <tr>
-                          <td class="agenda-time">
-                              10:15 AM - 12:00 PM 
-                          </td>
-                          <td class="agenda-events">
-                              <div class="agenda-event">
-                                  Meeting with executives
-                              </div>
-                          </td>
-                          <td class="bookTime">
-                             
-                                <button type="button" class="btn btn-default btn-xs" aria-haspopup="true" aria-expanded="false">
-                                Book Now! 
-                                </button>
-  
-                          </td>
-                      </tr>
-                      <tr>
-                          <td class="agenda-time">
-                              7:00 - 9:00 PM
-                          </td>
-                          <td class="agenda-events">
-                              <div class="agenda-event">
-                                  Aria's dance recital
-                              </div>
-                          </td>
-                          <td class="bookTime">
-                             
-                                <button type="button" class="btn btn-default btn-xs" aria-haspopup="true" aria-expanded="false">
-                                Book Now! 
-                                </button>
-  
-                          </td>
-                      </tr>
-                  </tbody>
-              </table>
-          </div>
-    </div> {{!-- end .agenda --}}
+
+
+      <!-- Modal -->
+           <div class="modal fade" id = "myModal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title">Modal title</h4>
+                </div>
+
+                <div class="row">
+                    <div class="modal-photo col-lg-4">
+                    </div>
+                    <div class="modal-body">
+                      <p>One fine body&hellip;</p>
+                    </div>
+                    <div class="modal-avail">
+                    </div>
+                    <div class="modal-subj">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Book This Tutor</button>
+                </div>
+              </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+          </div><!-- /.modal -->
   </div> {{!-- end searchResults --}}
   
 

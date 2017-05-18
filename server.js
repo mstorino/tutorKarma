@@ -42,8 +42,6 @@ app.use(express.static("./public"));
 // require("./routes/html-routes.js")(app);
 require("./routes/app-routes.js")(app);
 require("./routes/api-routes/user-routes.js")(app);
-require("./routes/api-routes/availability-routes.js")(app);
-require("./routes/api-routes/userSubjects-routes.js")(app);
 
 //Need to add more routes
 

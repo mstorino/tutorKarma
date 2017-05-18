@@ -192,6 +192,19 @@ body {
 /*TUTOR HTML FORMATTING*/
 /*END TUTOR FORMATTING*/
 
+.CRUDCaption {
+	padding:10px;
+}
+.CRUDButtons{
+	padding-bottom:10px;
+}
+
+label.CRUDCheck {
+	padding-left: 40px;
+}
+.CRUDSubmit{
+	width:100%;
+}
 /* Extra small devices (phones, less than 768px) */
 /* No media query since this is the default in Bootstrap */
 

@@ -17,7 +17,7 @@
           <div class="thumbnail tutorThumbnail">
             <img src ="assets/img/tutor{{id}}.jpg"> 
             {{!-- <img src="http://placehold.it/500x500/EEE"> --}}
-            <div class="tutorCaption">
+            <div class="tutorCaption CRUDCaption">
              
                 
                 <h4 class = "capitalize tutorName">{{firstName}}</h4>
@@ -30,25 +30,18 @@
                 <a href="#" class="btn btn-default capitalize deleteTutorBtn" role="button">Delete {{firstName}}</a>  --}}
 
 
-  <form>
-    <div class="form-group">
-     
-        <div class="checkbox">
-          <label>
-            <input type="checkbox"> Unavailable
-          </label>
-        </div>
-        <div class="checkbox">
-          <label>
-            <input type="checkbox"> Delete
-          </label>
-        </div>
+  <div class="row CRUDButtons">
+      <div class="checkbox col-lg-12">
+        <label>
+          <input type="checkbox" data-value="deleteTutor"> Delete
+        </label>
+        <label class="CRUDCheck">
+          <input type="checkbox" data-value="unavailabileTutor"> Unavailable
+        </label>
       </div>
-      <button type="submit" class="btn btn-default">Submit</button>
    
-  </form>
-
-
+   </div><!-- CRUD buttons-->
+  <button type="submit" class="btn btn-danger CRUDSubmit">Submit</button> 
                 
             </div> {{!-- end caption --}}
 

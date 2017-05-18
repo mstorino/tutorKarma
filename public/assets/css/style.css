@@ -55,9 +55,9 @@ body {
 .searchResults {
 	margin-top: 10px;
 	/*height: 300px;*/
-	border-color: black;
+	/*border-color: black;
 	border-width: 5px;
-	border-style: solid;
+	border-style: solid;*/
 	padding-right: 0px;
 	padding-left: 0px;
 }
@@ -82,6 +82,39 @@ body {
     letter-spacing: -0.5px;
     font-family: "HelveticaNeueHeavy","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
+
+.modalImg {
+	height: 160px;
+}
+
+/*agenda*/
+.agenda { 
+	padding-top:60px;
+ }
+
+/* Dates */
+.agenda .agenda-date { width: 170px; }
+.agenda .agenda-date .dayofmonth {
+  width: 40px;
+  font-size: 36px;
+  line-height: 36px;
+  float: left;
+  text-align: right;
+  margin-right: 10px; 
+}
+.agenda .agenda-date .shortdate {
+  font-size: 0.75em; 
+}
+
+
+/* Times */
+.agenda .agenda-time { width: 140px; } 
+
+
+/* Events */
+.agenda .agenda-events {  } 
+.agenda .agenda-events .agenda-event {  } 
+
 
 /*.favoriteTutor {
 	border:none;
@@ -116,6 +149,10 @@ body {
 }
 
 /*STUDENT HTML FORMATTING*/
+.tutorRow {
+	margin-right: 0px;
+	margin-left:0px;
+}
 /*END STUDENT FORMATTING*/
 
 /*TUTOR HTML FORMATTING*/

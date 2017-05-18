@@ -37,7 +37,7 @@ module.exports = function(sequelize, DataTypes) {
       classMethods: {
         associate: function(models) {
           // A subject (foreignKey) is required or a tutor can't be created
-          Subject.belongsTo(models.User, {
+          User.belongsTo(models.Subject, {
             foreignKey: {
               allowNull: false
             }

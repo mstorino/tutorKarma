@@ -1,3 +1,25 @@
+
+var db = require("../../models");
+// Routes
+// =============================================================
+module.exports = function(app) {
+  app.get("/api/usersubjects", function(req, res) {
+    db.Subject.findAll({
+    }).then(function(dbUserSubject) {
+      res.json(dbUserSubject);
+    });
+  });
+
+  app.get("/api/usersubjects/:SubjectId", function(req, res) {
+    db.Subject.findAll({
+    	where: {
+    		SubjectId: req.params.SubjectId
+    	}
+    }).then(function(dbUserSubject) {
+      res.json(dbUserSubject);
+    });
+  });
+
 // var db = require("../../models");
 // // Routes
 // // =============================================================
@@ -18,5 +40,6 @@
 //       res.json(dbUserSubject);
 //     });
 //   });
+
 
 // };

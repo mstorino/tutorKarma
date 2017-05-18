@@ -95,7 +95,8 @@ body {
 
 .tutorName {
 	position: absolute;
-    top: 25px;
+    top: 6px;
+    left:12px;
     height: 35px;
     width: 35%;
     font-size: 2.1em;
@@ -157,6 +158,11 @@ body {
 
 .tutorCaption{
 	min-height: 106px;
+	padding:6px;
+}
+
+.tutorThumbnailContainer{
+	padding:2px;
 }
 
 .bookTutorBtn {

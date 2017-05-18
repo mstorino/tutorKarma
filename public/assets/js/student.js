@@ -30,11 +30,11 @@ function parseTutorData (data) {
     for (var i = 0; i < allTutors.length; i++) {
       if (selectedValue == parseInt(allTutors[i].id)) {
         $('.modal-title').html("<h3>" + allTutors[i].firstName + "</h3>");
-        $('.modal-body').html("<h4>About:</h4><p>Tutor Mantra: " + allTutors[i].about + "</p>");
+        $('.modal-body').html("<h4>About</h4><p>Mantra: " + allTutors[i].about + "</p>");
         $('.modal-photo').html("<img src ='assets/img/tutor" + allTutors[i].id + ".jpg'>");
 
         if (allTutors[i].available == null){
-          $('.modal-avail').html("<p>Available to tutor today.</p>");
+          $('.modal-avail').html("<p>Schedule: Available to tutor today.</p>");
         } 
         
         matchTutorSubjects(allTutors[i].SubjectId);

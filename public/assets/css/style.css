@@ -32,9 +32,30 @@ body {
 	border-left: 1px solid grey;
 }
 
+
+/*BEGIN MAIN PAGE STYLING*/
 .jumbotron h1 {
-	color:#777777;
+	/*color:#58709e;*/
+	text-align: center;
 }
+
+.jumbotron {
+	/*background-color: #58709e;*/
+	background: url(../img/background1.jpg);
+	background-size: 1000px 500px;
+}
+
+.getStartBtn {
+	background-color: #58709e;
+}
+
+
+.panel-default > .panel-heading {
+  background-color: #a2ca8c;
+}
+
+/*END MAIN PAGE STYLE*/
+
 
 .footer {
     position: absolute;

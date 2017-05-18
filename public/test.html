@@ -1,32 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	
-		<title>tutorKarma</title>
+  
+    <title>tutorKarma</title>
 
-<!-- Favicon -->
-	<link rel="icon" type="image/ico" href="assets/img/favicon.ico" sizes="32x32" />
-	
-
-<!-- Bootstrap CSS -->
+   <!-- Favicon -->
+  <link rel="icon" type="image/ico" href="assets/img/favicon.ico" sizes="32x32" />
+  
+  <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-<!-- Custom Stylesheet -->
-	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
-	
-<!-- Google Font -->
-	
-<!-- Responsive -->
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Custom Stylesheet -->
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  
+  <!-- Google Font -->
+  
+  <!-- Responsive -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
 </head>
 <body>
-	
-
-	<!-- NAVIGATION -->
+  
+  <!-- NAVIGATION -->
 <nav class="navbar navbar-default">
   <div class="container-fluid headerWrapper">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -37,7 +35,8 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">tutorKarma</a>
+      
+      <a class="navbar-brand" href="/">tutorKarma</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -45,58 +44,85 @@
       
       <ul class="nav navbar-nav navbar-right">
         
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <span class="glyphicon glyphicon-apple" aria-hidden="true"></span> Student <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">View Appointments</a></li>
-            <li><a href="#">Schedule Appointments</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Log Out</a></li>
-          </ul>
+        <li>
+          <a href="/tutor" class="navList" role="button" aria-haspopup="true" aria-expanded="false"> <span class="glyphicon glyphicon-apple" aria-hidden="true"></span> Tutor </a>
         </li>
 
-        <li class="dropdown lastDropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Tutor <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Manage Profile</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Log Out</a></li>
-          </ul>
+        <li class ="lastNav">
+          <a href="/student" class="navList" role="button" aria-haspopup="true" aria-expanded="false"> <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Student </a>
+        </li>
+
+        <li class ="lastNav">
+          <a href="/admin" class="navList" role="button" aria-haspopup="true" aria-expanded="false"> <span class="glyphicon glyphicon-apple" aria-hidden="true"></span> Admin </a>
         </li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+  <!-- Scripts: jQuery, Tether, Bootstrap JS-->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    
+  <!-- Bootstrap JS-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
 
+<div class="container-fluid">
 
-<!-- MAIN CONTENT -->
-	<div class="container-fluid">
-
-<div class="jumbotron">
+<div class="jumbotron text-center">
   <h1>Get a tutor!</h1>
-  <p>**INSERT PHOTO/SLIDESHOW**</p>
-  <p><a class="btn btn-primary btn-lg" href="#" role="button">Click to get started</a></p>
+ <!--  <p>**INSERT PHOTO/SLIDESHOW**</p> -->
+  <p><a class="btn btn-primary btn-lg getStartBtn" href="#" role="button">Search tutors</a></p>
 
 </div> <!-- end jumbotron div -->
 
-	</div> <!-- end MAIN CONTENT .container-fluid-->
+<!-- BEGIN NEW MAIN PAGE CONTENT -->
+<h2> <center> How tutorKarma works </h2> </center>
 
-<!-- Footer -->
-	<footer class="footer">
+<div class="col-md-4">
+<div class="panel panel-default">
+  <div class="panel-heading"> 
+    <h4>  <center> Request Your Tutor </center> </h4> 
+  </div>
+  <div class="panel-body">
+   <center> <img src="./assets/img/comp.png" height="100" width="100"> 
+   <p> Log in and request a tutor. You can search by subject or, if you're looking for someone special, you can search by name. </center> </p>
+  </div>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="panel panel-default">
+  <div class="panel-heading"> 
+    <h4>  <center> Meet & Learn </center> </h4> </div>
+  <div class="panel-body">
+     <center> <img src="./assets/img/meet.png" height="100" width="100"> 
+     <p> Once your tutor approves the session, set a location. Work to gether to cover the topics you need the most help in.</center> </p>
+  </div>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="panel panel-default">
+  <div class="panel-heading"> 
+    <h4>  <center> Get #goodKarma </center> </h4> </div>
+  <div class="panel-body">
+     <center> <img src="./assets/img/karma.png" height="100" width="100"> 
+     <p> Time to write a review! Let others know about your experience. Once you've mastered the content, get good karma by helping others.</center> </p>
+  </div>
+</div>
+</div>
+
+  </div> <!-- end MAIN CONTENT .container-fluid-->
+
+
+  
+  <footer class="footer">
       <div class="container">
         <p class="text-muted text-center">tutorKarma</p>
       </div>
   </footer>
 
+  
 
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!--  Scripts: jQuery --> 
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     
-
-
 </body>
 </html>

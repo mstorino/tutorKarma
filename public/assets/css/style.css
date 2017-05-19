@@ -65,9 +65,23 @@ body {
 .bookTutorBtn {
 	background-color: #58709e;
 }
+.bookTutorBtn:hover {
+	background-color: #a2ca8c;
+	border-style: none;
+}
+
 .submittutor {
 	background-color: #58709e;
 	width:100%;
+}
+.submittutor:hover {
+	background-color: #a2ca8c;
+	border-style: none;
+
+}
+
+.btn {
+	border-style: none;
 }
 
 

@@ -33,7 +33,7 @@ function parseTutorData (data) {
         $('.modal-body').html("<h4>About</h4><p>Mantra: " + allTutors[i].about + "</p>");
         $('.modal-photo').html("<img src ='assets/img/tutor" + allTutors[i].id + ".jpg'>");
 
-        if (allTutors[i].available == null){
+        if (parseInt(allTutors[i].available) == 1){
           $('.modal-avail').html("<p>Schedule: Available to tutor today.</p>");
         } 
         

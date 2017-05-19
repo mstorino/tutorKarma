@@ -57,6 +57,21 @@ body {
 /*END MAIN PAGE STYLE*/
 
 
+.modal-content > .modal-header{
+	background-color: #a2ca8c;
+}
+
+
+.bookTutorBtn {
+	background-color: #58709e;
+}
+.submittutor {
+	background-color: #58709e;
+	width:100%;
+}
+
+
+
 .footer {
     position: absolute;
     bottom: 0;
@@ -186,6 +201,9 @@ label.CRUDCheck {
 }
 .CRUDSubmit{
 	width:100%;
+	background-color: #f8f085;
+	color: black;
+	border-style: none;
 }
 /* Extra small devices (phones, less than 768px) */
 /* No media query since this is the default in Bootstrap */

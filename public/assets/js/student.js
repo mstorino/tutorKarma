@@ -77,11 +77,11 @@ var selectedValue2;
 var userIdSubjTutor = [];
 var tutorRow = "";
 
-// function resetTutorsBySubject(){
-//   selectedValue2 = 0;
-//   userIdSubjTutor = [];
-//   tutorRow = "";
-// }
+function resetTutorsBySubject(){
+  selectedValue2 = 0;
+  userIdSubjTutor = [];
+  tutorRow = "";
+}
 
 function handleSubjectFormSubmit(event) {
     event.preventDefault();
@@ -122,13 +122,13 @@ function showTutorRow(data) {
    $('.tutorRow').html(data);
 }
 
-$(".CRUDSubmit").click(function(){
-  showModal();
-});
+// $(".CRUDSubmit").click(function(){
+//   showModal();
+// });
 
-$(".submittutor").click(function(){
-  showModal();
-});
+// $(".submittutor").click(function(){
+//   showModal();
+// });
 
 
 // ************* Book Tutor Button

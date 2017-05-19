@@ -37,6 +37,7 @@ body {
 .jumbotron h1 {
 	/*color:#58709e;*/
 	text-align: center;
+	font-weight:800;
 }
 
 .jumbotron {
@@ -136,11 +137,23 @@ body {
 
 .modal-photo img {
 	height: 160px;
+	
 }
 
+.modal-photo {
+	position:relative;
+	float:left;
+}
 .modal-body {
 	padding: 5px 0px 0px 0px;
 }
+
+.tutorModal {
+	position:relative;
+	float:left;
+
+}
+
 
 
 /*.favoriteTutor {

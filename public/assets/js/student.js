@@ -6,7 +6,7 @@ $(document).ready(function() {
   
   $('#sel1').on("change", handleTutorFormSubmit);
  
-  // $('.closeBtn').on("click", resetState);
+  // $('.close').on("click", resetState);
   $('#sel2').on("change", handleSubjectFormSubmit);
 
   function handleTutorFormSubmit(event) {
@@ -29,13 +29,13 @@ function parseTutorData (data) {
     console.log(selectedValue);
     for (var i = 0; i < allTutors.length; i++) {
       if (selectedValue == parseInt(allTutors[i].id)) {
-        $('.modal-title').html("<h3>" + allTutors[i].firstName + "</h3>");
-        $('.modal-body').html("<h4>About</h4><p>Mantra: " + allTutors[i].about + "</p>");
+        $('.modal-title').html("<h3>" + allTutors[i].firstName + "</h4>");
+        $('.modal-body').html("<h4><strong>About:</strong> " + allTutors[i].about + "</p>");
         $('.modal-photo').html("<img src ='assets/img/tutor" + allTutors[i].id + ".jpg'>");
 
-        if (parseInt(allTutors[i].available) == 1){
-          $('.modal-avail').html("<p>Schedule: Available to tutor today.</p>");
-        } 
+        // if (parseInt(allTutors[i].available) == 1){
+        //   $('.modal-avail').html("<h4>Schedule:</h4><p>Available to tutor today.</p>");
+        // } 
          $('.modal-footer').html("<form action='/student/" + allTutors[i].id + "?_method=PUT' method='POST'><input type = 'hidden' name = 'available' value = '0'><button type='submit' class='btn btn-info btn-danger CRUDSubmit'>Book A Session With " + allTutors[i].firstName+"</button></form>")
 
         
@@ -53,7 +53,7 @@ function matchTutorSubjects (data) {
     
     if (data == allSubjects[j].id) {
       // console.log(allSubjects[j].subjectName)
-      $('.modal-subj').html("<p>Subject: " + allSubjects[j].subjectName + "</p>");
+      $('.modal-subj').html("<h4><strong>Subject:</strong> " + allSubjects[j].subjectName + "</h4>");
     }
   }
 }
@@ -65,11 +65,11 @@ function showModal(){
     
   }
 
-function resetState(){
-  selectedValue = 0;
-  $('#myModal').empty();
-  $('.modal-body').empty();
-}
+// function resetState(){
+//   selectedValue = 0;
+//   $('#myModal').empty();
+//   $('.modal-body').empty();
+// }
 
 // ************* Subject Button
 
@@ -77,11 +77,11 @@ var selectedValue2;
 var userIdSubjTutor = [];
 var tutorRow = "";
 
-function resetTutorsBySubject(){
-  selectedValue2 = 0;
-  userIdSubjTutor = [];
-  tutorRow = "";
-}
+// function resetTutorsBySubject(){
+//   selectedValue2 = 0;
+//   userIdSubjTutor = [];
+//   tutorRow = "";
+// }
 
 function handleSubjectFormSubmit(event) {
     event.preventDefault();
@@ -118,13 +118,9 @@ function createTutorRow(data) {
 
   }
 
-
 function showTutorRow(data) {
    $('.tutorRow').html(data);
 }
-
-
-
 
 $(".CRUDSubmit").click(function(){
   showModal();

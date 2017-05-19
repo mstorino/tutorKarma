@@ -57,6 +57,35 @@ body {
 /*END MAIN PAGE STYLE*/
 
 
+.modal-content > .modal-header{
+	background-color: #a2ca8c;
+}
+
+
+.bookTutorBtn {
+	background-color: #58709e;
+}
+.bookTutorBtn:hover {
+	background-color: #a2ca8c;
+	border-style: none;
+}
+
+.submittutor {
+	background-color: #58709e;
+	width:100%;
+}
+.submittutor:hover {
+	background-color: #a2ca8c;
+	border-style: none;
+
+}
+
+.btn {
+	border-style: none;
+}
+
+
+
 .footer {
     position: absolute;
     bottom: 0;
@@ -186,6 +215,9 @@ label.CRUDCheck {
 }
 .CRUDSubmit{
 	width:100%;
+	background-color: #f8f085;
+	color: black;
+	border-style: none;
 }
 /* Extra small devices (phones, less than 768px) */
 /* No media query since this is the default in Bootstrap */

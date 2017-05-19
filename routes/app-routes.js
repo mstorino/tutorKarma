@@ -131,6 +131,16 @@ app.post("/tutor", function(req, res) {
     });
   });
 
+  app.delete("/admin/:id", function(req, res) {
+    db.User.destroy({
+      where: {
+        id: req.params.id
+      }
+    }).then(function(dbTutors) {
+      res.redirect("/admin");
+    });
+  });
+
 
   
 

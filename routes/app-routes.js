@@ -32,6 +32,29 @@ module.exports = function(app) {
   });
 
 
+app.get("/appointment", function (req, res) {
+   db.Subject.findAll({
+   }).then(function(dbSubjects){
+    
+     db.User.findAll({
+
+        where: {
+         available: 1
+        }
+
+     }).then(function(dbTutors){
+        res.render("appointment", {
+        availSubject: dbSubjects,
+        availTutor: dbTutors,
+        availTutorArray: JSON.stringify(dbTutors),
+        availSubjArray: JSON.stringify(dbSubjects)
+      
+        })
+      }); 
+    });
+  });
+
+
   app.get("/tutor", function (req, res) {
    db.Subject.findAll({
    }).then(function(dbSubjects){
@@ -105,6 +128,16 @@ app.post("/tutor", function(req, res) {
       
         })
       }); 
+    });
+  });
+
+  app.delete("/admin/:id", function(req, res) {
+    db.User.destroy({
+      where: {
+        id: req.params.id
+      }
+    }).then(function(dbTutors) {
+      res.redirect("/admin");
     });
   });
 

@@ -13,6 +13,7 @@
       
 
        {{#each availTutor}}
+       
         <div class="container tutorThumbnailContainer col-xs-6 col-md-3 col-lg-3">
           <div class="thumbnail tutorThumbnail">
             <img src ="assets/img/tutor{{id}}.jpg"> 
@@ -32,9 +33,14 @@
         </label>
       </div>
    
-   </div><!-- CRUD buttons-->
+   </div> <!-- CRUD buttons-->
+
 
   <button type="submit" class="btn btn-info btn-danger CRUDSubmit">Update</button>
+
+    <!-- <form action="/admin/{{this.id}}?_method=DELETE" method="POST">
+      <button type="submit" class="btn btn-info btn-danger CRUDSubmit" data-toggle="modal" data-target="#myModal">Delete</button>
+    </form>  --> 
 
   <!-- Modal -->
 <div id="myModal" class="modal fade" role="dialog">
@@ -62,6 +68,7 @@
           </div>{{!--  endTutorThumbnail --}}
 
         </div> {{!-- end tutorThumbnailContainer --}}
+
       {{/each}}
   
       

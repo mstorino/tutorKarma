@@ -14,7 +14,7 @@ $(document).ready(function() {
     // if (!selectedValue) {
     //   return;
     // } else {
-      console.log(userId);
+      console.log(allTutors.userId);
 
     // }
 
@@ -26,19 +26,18 @@ $(document).ready(function() {
     
     updatedUser.id = parseInt(userId);
 
-    console.log(updatedUser);
+    
     updateUser(updatedUser);
   };
 
-
-  function updateUser(data){
+function updateUser(data){
          $.ajax({
           method: "PUT",
           url: "/api/users",
           data:data
          })
          .done (function(){
-          window.location.href = "/student";
+          window.location.href = "/appointment";
          });
         };
   

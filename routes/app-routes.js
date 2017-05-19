@@ -16,7 +16,7 @@ module.exports = function(app) {
      db.User.findAll({
 
         where: {
-         available: null
+         available: 1
         }
 
      }).then(function(dbTutors){

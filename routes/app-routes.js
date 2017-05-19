@@ -115,9 +115,13 @@ app.post("/tutor", function(req, res) {
     about: req.body.about,
     SubjectId: req.body.SubjectId
   }).then(function() {
-    res.redirect("/tutor");
+    res.redirect("/create");
   });
 });
+
+app.get("/create", function (req, res) {
+    res.render("create")
+  });
 
 // app.get("/student/id", function (req, res) {
    

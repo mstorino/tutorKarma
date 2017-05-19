@@ -31,28 +31,53 @@ module.exports = function(app) {
     });
   });
 
-
-app.get("/appointment", function (req, res) {
-   db.Subject.findAll({
-   }).then(function(dbSubjects){
-    
-     db.User.findAll({
-
-        where: {
-         available: 1
-        }
-
-     }).then(function(dbTutors){
-        res.render("appointment", {
-        availSubject: dbSubjects,
-        availTutor: dbTutors,
-        availTutorArray: JSON.stringify(dbTutors),
-        availSubjArray: JSON.stringify(dbSubjects)
-      
-        })
-      }); 
+  app.put("/student/:id", function(req, res) {
+    db.User.update({
+        available: req.body.available
+      },
+        {
+      where: {
+        id: req.params.id,
+      }
+    }).then(function(dbTutors) {
+      res.redirect("/student");
     });
   });
+
+
+
+  // app.put("/api/users", function(req, res) {
+  //   db.User.update(req.body,
+  //     {
+  //       where: {
+  //         id: req.body.id
+  //       }
+  //     })
+  //   .then(function(dbUser) {
+  //     res.json(dbUser);
+  //   });
+  // });
+// app.get("/appointment", function (req, res) {
+//    db.Subject.findAll({
+//    }).then(function(dbSubjects){
+    
+//      db.User.findAll({
+
+//         where: {
+//          available: 1
+//         }
+
+//      }).then(function(dbTutors){
+//         res.render("appointment", {
+//         availSubject: dbSubjects,
+//         availTutor: dbTutors,
+//         availTutorArray: JSON.stringify(dbTutors),
+//         availSubjArray: JSON.stringify(dbSubjects)
+      
+//         })
+//       }); 
+//     });
+//   });
 
 
   app.get("/tutor", function (req, res) {
@@ -135,6 +160,19 @@ app.post("/tutor", function(req, res) {
     db.User.destroy({
       where: {
         id: req.params.id
+      }
+    }).then(function(dbTutors) {
+      res.redirect("/admin");
+    });
+  });
+
+  app.put("/admin/:id", function(req, res) {
+    db.User.update({
+        available: req.body.available
+      },
+        {
+      where: {
+        id: req.params.id,
       }
     }).then(function(dbTutors) {
       res.redirect("/admin");

@@ -186,7 +186,7 @@ body {
 }*/
 
 .tutorCaption{
-	min-height: 106px;
+	min-height: 122px;
 	padding:6px;
 }
 
@@ -197,6 +197,10 @@ body {
 .bookTutorBtn {
 	position:absolute;
 	bottom: 10px;
+	width:92%;
+	background-color: #f8f085;
+	color: black;
+	border-style: none;
 }
 /*END STUDENT FORMATTING*/
 
@@ -213,11 +217,18 @@ body {
 label.CRUDCheck {
 	padding-left: 40px;
 }
-.CRUDSubmit{
+.CRUDSubmit , .CRUDUpdate{
 	width:100%;
 	background-color: #f8f085;
 	color: black;
 	border-style: none;
+}
+.CRUDSubmit {
+	background-color:#f8f085;
+}
+.CRUDUpdate {
+	background-color: #a2ca8c;
+	margin-top:10px;
 }
 /* Extra small devices (phones, less than 768px) */
 /* No media query since this is the default in Bootstrap */

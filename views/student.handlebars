@@ -10,6 +10,7 @@
 <!-- search buttons  -->
 <!-- tutor search  -->
 <div class="row searchDropDowns">
+
     <div class="form-group col-lg-4">
       <label for="tutorValue">Tutor List:</label>
       <select class="form-control capitalize" id="sel1">
@@ -33,7 +34,7 @@
     </div>
 
     <!-- avail search  -->
-    <div class="form-group col-lg-4">
+    {{!-- <div class="form-group col-lg-4">
       <label for="tutorValue">Avail List:</label>
       <select class="form-control capitalize" id="sel3">
       <option class = "hi" value = 0></option>
@@ -41,7 +42,7 @@
             <option class = "hi" value = {{id}}>{{firstName}}</option>
           {{/each}}
       </select>
-    </div>
+    </div> --}}
 
     
 
@@ -63,8 +64,11 @@
                 <h4 class = "capitalize tutorName">{{firstName}}</h4>
                 <p>Mantra: {{about}}</p> 
               
-                
-                <a href="#" class="btn btn-primary btn-sm capitalize bookTutorBtn" value= {{id}} role="button">Book {{firstName}}</a> 
+                <form action="/student/{{id}}?_method=PUT" method="POST">
+                  <input type = "hidden" name = "available" value = "0">
+                  <button type="submit" class="btn btn-info btn-danger text-center bookTutorBtn" data-toggle="modal" data-target="#myModal">Book A Session With {{firstName}}</button>
+                </form>
+                {{!-- <a href="#" class="btn btn-primary btn-sm capitalize bookTutorBtn" value= {{id}} role="button">Book {{firstName}}</a>  --}}
                 
             </div> {{!-- end caption --}}
 

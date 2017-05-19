@@ -36,8 +36,11 @@ function parseTutorData (data) {
         if (parseInt(allTutors[i].available) == 1){
           $('.modal-avail').html("<p>Schedule: Available to tutor today.</p>");
         } 
+         $('.modal-footer').html("<form action='/student/" + allTutors[i].id + "?_method=PUT' method='POST'><input type = 'hidden' name = 'available' value = '0'><button type='submit' class='btn btn-info btn-danger CRUDSubmit'>Book A Session With " + allTutors[i].firstName+"</button></form>")
+
         
         matchTutorSubjects(allTutors[i].SubjectId);
+
 
         showModal();
        }    

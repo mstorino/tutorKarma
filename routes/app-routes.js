@@ -57,28 +57,6 @@ module.exports = function(app) {
   //     res.json(dbUser);
   //   });
   // });
-// app.get("/appointment", function (req, res) {
-//    db.Subject.findAll({
-//    }).then(function(dbSubjects){
-    
-//      db.User.findAll({
-
-//         where: {
-//          available: 1
-//         }
-
-//      }).then(function(dbTutors){
-//         res.render("appointment", {
-//         availSubject: dbSubjects,
-//         availTutor: dbTutors,
-//         availTutorArray: JSON.stringify(dbTutors),
-//         availSubjArray: JSON.stringify(dbSubjects)
-      
-//         })
-//       }); 
-//     });
-//   });
-
 
   app.get("/tutor", function (req, res) {
    db.Subject.findAll({
@@ -162,7 +140,7 @@ app.post("/tutor", function(req, res) {
         id: req.params.id
       }
     }).then(function(dbTutors) {
-      res.redirect("/admin");
+      res.redirect("/delete");
     });
   });
 
@@ -179,6 +157,23 @@ app.post("/tutor", function(req, res) {
     });
   });
 
+app.get("/delete", function (req, res) {
+    db.Subject.findAll({
+   }).then(function(dbSubjects){
+    
+     db.User.findAll({
+        
+     }).then(function(dbTutors){
+        res.render("delete", {
+        availSubject: dbSubjects,
+        availTutor: dbTutors,
+        availTutorArray: JSON.stringify(dbTutors),
+        availSubjArray: JSON.stringify(dbSubjects)
+      
+        })
+      }); 
+    });
+  });
 
   
 

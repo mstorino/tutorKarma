@@ -101,6 +101,11 @@ body {
 .addTutor {
 	float:right;
 }
+
+.deleteJumbotron {
+	background-color: white;
+	background-image: none;
+}
 /*END ADMIN FORMATTING*/
 
 .searchResults {

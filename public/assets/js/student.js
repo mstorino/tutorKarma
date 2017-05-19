@@ -122,6 +122,16 @@ function showTutorRow(data) {
 
 
 
+
+$(".CRUDSubmit").click(function(){
+  showModal();
+});
+
+$(".submittutor").click(function(){
+  showModal();
+});
+
+
 // ************* Book Tutor Button
 
 

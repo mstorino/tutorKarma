@@ -104,7 +104,7 @@ body {
 
 .deleteJumbotron {
 	background-color: white;
-	background-image: none;
+	background: none;
 }
 
 
@@ -177,6 +177,7 @@ body {
 	float:left;
 	padding: 5px 0px 0px 0px;
 	width:68%;
+	margin-left: 34px;
 
 }
 

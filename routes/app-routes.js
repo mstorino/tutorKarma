@@ -53,7 +53,16 @@ module.exports = function(app) {
       res.redirect("/appointment");
     });
   });
-    
+  
+  app.get("/cancel", function (req, res) {  
+    db.User.findAll({        
+    }).then(function(data){
+      var hbsObject = {
+        user: data
+      };
+    res.render("cancel", hbsObject);    
+    })
+  }); 
 
   app.put("/student/:id", function(req, res) {
     db.User.update({
@@ -68,19 +77,6 @@ module.exports = function(app) {
     });
   });
 
-
-
-  // app.put("/api/users", function(req, res) {
-  //   db.User.update(req.body,
-  //     {
-  //       where: {
-  //         id: req.body.id
-  //       }
-  //     })
-  //   .then(function(dbUser) {
-  //     res.json(dbUser);
-  //   });
-  // });
 
   app.get("/tutor", function (req, res) {
    db.Subject.findAll({
@@ -181,7 +177,7 @@ app.get("/create", function (req, res) {
         id: req.params.id,
       }
     }).then(function(dbTutors) {
-      res.redirect("/admin");
+      res.redirect("/appointment");
     });
   });
 

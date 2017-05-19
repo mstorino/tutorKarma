@@ -1,112 +1,37 @@
-<script type="text/javascript">var allTutors = {{{availTutorArray}}}</script>
-<script type="text/javascript">var allSubjects = {{{availSubjArray}}}</script>
-<!-- MAIN CONTENT -->
 <div class="container">
+	<h2> Appointment Successfully Made! </h2>
+	<!-- Bookings Made  -->
 
-<h2 class = "tutorApptH2">Thank you for booking an appointment with TUTOR</h2>
-<h4>Search by subject or tutor:</h4> 
-<!-- search buttons  -->
-<!-- tutor search  -->
-<div class="row searchDropDowns">
-    <div class="form-group col-lg-4">
-      <label for="tutorValue">Tutor List:</label>
-      <select class="form-control capitalize" id="sel1">
-      <option class = "hi" value = 0></option>
-          {{#each availTutor}}
-            <option class = "hi" value = {{id}}>{{firstName}}</option>
-          {{/each}}
-      </select>
-    </div>
+  	<div class="container-fluid searchResults">
+      	<div class="row tutorRow">
+      		<h4 class = "tutorHeader">Your Bookings</h4> 
 
-    <!-- subject search  -->
+       		{{#each user}}
+       			{{#unless this.available}}
+        			<div class="container tutorThumbnailContainer col-xs-6 col-md-3 col-lg-3">
+          				<div class="thumbnail tutorThumbnail">
+            				<img src ="assets/img/tutor{{this.id}}.jpg"> 
+            				<div class="tutorCaption">
+             					<h4 class = "capitalize tutorName">{{this.firstName}}</h4>
+                				<p>Mantra: {{this.about}}</p> 
+					            <form action="/student/{{this.id}}?_method=PUT" method="POST">
+					           		<input type = "hidden" name = "available" value = "1">
+					            	<button type="submit" class="btn btn-info btn-danger text-center bookTutorBtn" data-toggle="modal" data-target="#myModal">Cancel booking with {{this.firstName}}</button>
+					            </form>
+					        </div>
+					    </div>
+					</div>
+				{{/unless}}
+			{{/each}}
+		</div>
+	</div>
+</div>
 
-    <div class="form-group col-lg-4">
-      <label for="tutorValue">Subject List:</label>
-      <select class="form-control" id="sel2">
-      <option class = "hi" value = 0></option>
-          {{#each availSubject}}
-            <option class = "hi" value = {{id}}>{{subjectName}}</option>
-          {{/each}}
-      </select>
-    </div>
-
-    <!-- avail search  -->
-    <div class="form-group col-lg-4">
-      <label for="tutorValue">Book Another Tutor</label>
-      <select class="form-control capitalize" id="sel3">
-      <option class = "hi" value = 0></option>
-          {{#each availTutor}}
-            <option class = "hi" value = {{id}}>{{firstName}}</option>
-          {{/each}}
-      </select>
-    </div>
-
-    
-
-</div> {{!-- end .searchDropDowns --}}
-
-<!-- search results  -->
-  <div class="container-fluid searchResults">
-      <div class="row tutorRow">
-      <h4 class = "tutorHeader">Our awesome tutors:</h4> 
-
-       {{#each availTutor}}
-        <div class="container tutorThumbnailContainer col-xs-6 col-md-3 col-lg-3">
-          <div class="thumbnail tutorThumbnail">
-            <img src ="assets/img/tutor{{id}}.jpg"> 
-            {{!-- <img src="http://placehold.it/500x500/EEE"> --}}
-            <div class="tutorCaption">
-             
                 
-                <h4 class = "capitalize tutorName">{{firstName}}</h4>
-                <p>Mantra: {{about}}</p> 
-              
                 
-                <a href="#" class="btn btn-primary btn-sm capitalize bookTutorBtn" value= {{id}} role="button">Book {{firstName}}</a> 
-                
-            </div> {{!-- end caption --}}
-
-          </div>{{!--  endTutorThumbnail --}}
-
-        </div> {{!-- end tutorThumbnailContainer --}}
-      {{/each}}
-  
-      
-      </div> <!-- close .tutorRow div  -->
+            
 
 
-      <!-- Modal -->
-           <div class="modal fade" id = "myModal" tabindex="-1" role="dialog">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                  <h4 class="modal-title">Modal title</h4>
-                </div>
-
-                <div class="row">
-                    <div class="modal-photo col-lg-4">
-                    </div>
-                    <div class="modal-body">
-                      <p>One fine body&hellip;</p>
-                    </div>
-                    <div class="modal-avail">
-                    </div>
-                    <div class="modal-subj">
-                    </div>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                  <button type="button" id = "bookTutorBtn6" class="btn btn-primary bookBtn">Book This Tutor</button>
-                </div>
-              </div><!-- /.modal-content -->
-            </div><!-- /.modal-dialog -->
-          </div><!-- /.modal -->
-  </div> {{!-- end searchResults --}}
-  
-
-<script src="assets/js/student.js"></script> 
-<script src="assets/js/updateAvail.js"></script> 
 
 
-</div> <!-- close container div  -->
+

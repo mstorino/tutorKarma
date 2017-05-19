@@ -106,6 +106,28 @@ body {
 	background-color: white;
 	background-image: none;
 }
+
+
+.glyphicon-certificate{
+	font-size:70px;
+	color:tomato;
+    position: absolute;
+    top: 232px;
+
+    left:326px;
+  /*  right: 5%;*/
+    /*width: 200px;
+    height: 200px;*/
+    margin:-60px 0 0 -60px;
+    -webkit-animation:spin 30s linear infinite;
+    -moz-animation:spin 30s linear infinite;
+    animation:spin 30s linear infinite;
+}
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+    
 /*END ADMIN FORMATTING*/
 
 .searchResults {

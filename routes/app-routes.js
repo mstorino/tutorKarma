@@ -31,6 +31,30 @@ module.exports = function(app) {
     });
   });
 
+  app.get("/appointment", function (req, res) {  
+    db.User.findAll({        
+    }).then(function(data){
+      var hbsObject = {
+        user: data
+      };
+    res.render("appointment", hbsObject);    
+    })
+  }); 
+
+  app.put("/appointment/:id", function(req, res) {
+    db.User.update({
+        available: req.body.available
+      },
+        {
+      where: {
+        id: req.params.id,
+      }
+    }).then(function(dbTutors) {
+      res.redirect("/appointment");
+    });
+  });
+    
+
   app.put("/student/:id", function(req, res) {
     db.User.update({
         available: req.body.available
@@ -40,7 +64,7 @@ module.exports = function(app) {
         id: req.params.id,
       }
     }).then(function(dbTutors) {
-      res.redirect("/student");
+      res.redirect("/appointment");
     });
   });
 

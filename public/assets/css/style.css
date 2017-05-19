@@ -139,6 +139,7 @@ body {
 .modal-photo {
 	position:relative;
 	float:left;
+	/*padding: 5px 0px 0px 0px;*/
 }
 .modal-body {
 	padding: 5px 0px 0px 0px;
@@ -147,7 +148,13 @@ body {
 .tutorModal {
 	position:relative;
 	float:left;
+	padding: 5px 0px 0px 0px;
+	width:68%;
 
+}
+
+.tutorModal h4 {
+	line-height:26px;
 }
 
 .upcomingSession {

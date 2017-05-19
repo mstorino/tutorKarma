@@ -2,11 +2,15 @@
 <script type="text/javascript">var allSubjects = {{{availSubjArray}}}</script>
 <!-- MAIN CONTENT -->
 <div class="container">
-
-
+  
+  <div class = "pendingAppt">
+  {{#each availAppt}}
+    <h4>You Have an Upcoming Appointment With {{firstName}}</h4>    
+  {{/each}}
+  </div> 
 
 <h2>Want to find a tutor?</h2>
-<h4>Search by subject or tutor:</h4> 
+<h4>Search by subject or tutor.</h4> 
 <!-- search buttons  -->
 <!-- tutor search  -->
 <div class="row searchDropDowns">
@@ -33,19 +37,6 @@
       </select>
     </div>
 
-    <!-- avail search  -->
-    {{!-- <div class="form-group col-lg-4">
-      <label for="tutorValue">Avail List:</label>
-      <select class="form-control capitalize" id="sel3">
-      <option class = "hi" value = 0></option>
-          {{#each availTutor}}
-            <option class = "hi" value = {{id}}>{{firstName}}</option>
-          {{/each}}
-      </select>
-    </div> --}}
-
-    
-
 </div> {{!-- end .searchDropDowns --}}
 
 <!-- search results  -->
@@ -62,7 +53,7 @@
              
                 
                 <h4 class = "capitalize tutorName">{{firstName}}</h4>
-                <p>Mantra: {{about}}</p> 
+                <p class = "text-center">{{about}}</p> 
               
                 <form action="/student/{{id}}?_method=PUT" method="POST">
                   <input type = "hidden" name = "available" value = "0">

@@ -23,6 +23,7 @@
                 
                 <h4 class = "capitalize tutorName">{{firstName}}</h4>
 
+
     <form action="/admin/{{this.id}}?_method=DELETE" method="POST">
       <button type="submit" class="btn btn-info btn-danger CRUDSubmit" data-toggle="modal" data-target="#myModal">Delete {{firstName}}</button>
     </form>
@@ -31,6 +32,26 @@
         <input type = "hidden" name = "available" value = "0">
           <button type="submit" class="btn btn-info btn-danger CRUDUpdate" data-toggle="modal" data-target="#myModal">Update Avaialbility</button>
     </form>
+
+  <!-- <div class="row CRUDButtons">
+      <div class="checkbox col-lg-12">
+        <label>
+          <input type="checkbox" data-value="deleteTutor"> Delete
+        </label>
+        <label class="CRUDCheck">
+          <input type="checkbox" data-value="unavailabileTutor"> Unavailable
+        </label>
+      </div> 
+   
+   </div>--> <!-- CRUD buttons--> 
+
+
+  <!-- <button type="submit" class="btn btn-info btn-danger CRUDSubmit">Update</button> -->
+
+  {{!--   <form action="/admin/{{this.id}}?_method=DELETE" method="POST">
+      <button type="submit" class="btn btn-info btn-danger CRUDSubmit" data-toggle="modal" data-target="#myModal">Delete</button>
+    </form>  --}}
+
 
   <!-- Modal -->
 <div id="myModal" class="modal fade" role="dialog">

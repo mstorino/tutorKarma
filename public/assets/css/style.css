@@ -105,10 +105,6 @@ body {
 
 .searchResults {
 	margin-top: 10px;
-	/*height: 300px;*/
-	/*border-color: black;
-	border-width: 5px;
-	border-style: solid;*/
 	padding-right: 0px;
 	padding-left: 0px;
 }
@@ -154,28 +150,6 @@ body {
 
 }
 
-
-
-/*.favoriteTutor {
-	border:none;
-	font-size: 20px;
-}
-
-.favoriteTutor:hover {
-	background-color: white;
-}
-
-.glyphicon-heart {
-	padding-left: 54px;
-	color:tomato;
-	transition: all .2s ease-in-out;
-
-}
-
-.glyphicon-heart:hover { 
-	transform: scale(1.1); 
-}*/
-
 .upcomingSession {
 	margin-top: 10px;
 	height: 300px;
@@ -193,10 +167,6 @@ body {
 	margin-right: 0px;
 	margin-left:0px;
 }
-
-/*.tutorThumbnailContainer {
-	min-height: 600px;
-}*/
 
 .tutorCaption{
 	min-height: 122px;
@@ -218,6 +188,7 @@ body {
 /*END STUDENT FORMATTING*/
 
 /*TUTOR HTML FORMATTING*/
+
 /*END TUTOR FORMATTING*/
 
 .CRUDCaption {

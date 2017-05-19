@@ -50,19 +50,22 @@ module.exports = function(app) {
         id: req.params.id,
       }
     }).then(function(dbTutors) {
-      res.redirect("/appointment");
+      res.redirect("cancel");
     });
   });
-  
-  app.get("/cancel", function (req, res) {  
-    db.User.findAll({        
-    }).then(function(data){
-      var hbsObject = {
-        user: data
-      };
-    res.render("cancel", hbsObject);    
-    })
-  }); 
+
+app.get("/cancel", function (req, res) {
+    res.render("cancel")
+  });  
+  // app.get("/cancel", function (req, res) {  
+  //   db.User.findAll({        
+  //   }).then(function(data){
+  //     var hbsObject = {
+  //       user: data
+  //     };
+  //   res.render("cancel", hbsObject);    
+  //   })
+  // }); 
 
   app.put("/student/:id", function(req, res) {
     db.User.update({

@@ -112,7 +112,7 @@ function parseTutorBySubject (data) {
 
 function createTutorRow(data) {
     for (var i = 0; i < data.length; i++) {
-      tutorRow += "<div class='container tutorThumbnailContainer col-xs-6 col-md-3 col-lg-3'><div class='thumbnail tutorThumbnail'><img src ='assets/img/tutor" + data[i].id + ".jpg'><div class='tutorCaption'><h4 class = 'capitalize tutorName'>" + data[i].firstName + "</h4><p>" + data[i].about + "</p><a href='#' class='btn btn-default btn-sm capitalize bookTutorBtn' role='button'>Book" + data[i].firstName + "</a></div></div></div>"
+      tutorRow += "<div class='container tutorThumbnailContainer col-xs-6 col-md-3 col-lg-3'><div class='thumbnail tutorThumbnail'><img src ='assets/img/tutor" + data[i].id + ".jpg'><div class='tutorCaption'><h4 class = 'capitalize tutorName'>" + data[i].firstName + "</h4><p>" + data[i].about + "</p><button type='submit' class='btn btn-info btn-danger text-center bookTutorBtn'>Schedule Appointment</button></div></div></div>"
     }
     showTutorRow(tutorRow); 
 

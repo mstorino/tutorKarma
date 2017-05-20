@@ -29,7 +29,7 @@ function parseTutorData (data) {
     console.log(selectedValue);
     for (var i = 0; i < allTutors.length; i++) {
       if (selectedValue == parseInt(allTutors[i].id)) {
-        $('.modal-title').html("<h3>" + allTutors[i].firstName + "</h4>");
+        $('.modal-title').html(allTutors[i].firstName);
         $('.modal-body').html("<h4><strong>About:</strong> " + allTutors[i].about + "</p>");
         $('.modal-photo').html("<img src ='assets/img/tutor" + allTutors[i].id + ".jpg'>");
 

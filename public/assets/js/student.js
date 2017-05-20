@@ -36,7 +36,7 @@ function parseTutorData (data) {
         // if (parseInt(allTutors[i].available) == 1){
         //   $('.modal-avail').html("<h4>Schedule:</h4><p>Available to tutor today.</p>");
         // } 
-         $('.modal-footer').html("<form action='/student/" + allTutors[i].id + "?_method=PUT' method='POST'><input type = 'hidden' name = 'available' value = '0'><button type='submit' class='btn btn-info btn-danger CRUDSubmit'>Book A Session With " + allTutors[i].firstName+"</button></form>")
+         $('.modal-footer').html("<form action='/student/" + allTutors[i].id + "?_method=PUT' method='POST'><input type = 'hidden' name = 'available' value = '0'><button type='submit' class='btn btn-info btn-primary CRUDSubmit'>Book A Session With " + allTutors[i].firstName+"</button></form>")
 
         
         matchTutorSubjects(allTutors[i].SubjectId);
@@ -112,7 +112,7 @@ function parseTutorBySubject (data) {
 
 function createTutorRow(data) {
     for (var i = 0; i < data.length; i++) {
-      tutorRow += "<div class='container tutorThumbnailContainer col-xs-6 col-md-3 col-lg-3'><div class='thumbnail tutorThumbnail'><img src ='assets/img/tutor" + data[i].id + ".jpg'><div class='tutorCaption'><h4 class = 'capitalize tutorName'>" + data[i].firstName + "</h4><p>" + data[i].about + "</p><button type='submit' class='btn btn-info btn-danger text-center bookTutorBtn'>Schedule Appointment</button></div></div></div>"
+      tutorRow += "<div class='container tutorThumbnailContainer col-xs-6 col-md-3 col-lg-3'><div class='thumbnail tutorThumbnail'><img src ='assets/img/tutor" + data[i].id + ".jpg'><div class='tutorCaption'><h4 class = 'capitalize tutorName'>" + data[i].firstName + "</h4><p>" + data[i].about + "</p><button type='submit' class='btn btn-info btn-primary text-center bookTutorBtn'>Schedule Appointment</button></div></div></div>"
     }
     showTutorRow(tutorRow); 
 

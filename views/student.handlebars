@@ -3,14 +3,11 @@
 <!-- MAIN CONTENT -->
 <div class="container">
   
-  <div class = "pendingAppt">
-  {{#each availAppt}}
-    <h4>You Have an Upcoming Appointment With {{firstName}}</h4>    
-  {{/each}}
-  </div> 
+  <div class="jumbotron studentJumbotron">
+    <h2>Want to find a tutor?</h2>
+    <h4>Search by subject or tutor.</h4> 
+  </div>
 
-<h2>Want to find a tutor?</h2>
-<h4>Search by subject or tutor.</h4> 
 <!-- search buttons  -->
 <!-- tutor search  -->
 <div class="row searchDropDowns">
@@ -57,7 +54,7 @@
               
                 <form action="/student/{{id}}?_method=PUT" method="POST">
                   <input type = "hidden" name = "available" value = "0">
-                  <button type="submit" class="btn btn-info btn-danger text-center bookTutorBtn" data-toggle="modal" data-target="#myModal">Book A Session With {{firstName}}</button>
+                  <button type="submit" class="btn btn-info btn-primary text-center bookTutorBtn" data-toggle="modal" data-target="#myModal">Book A Session With {{firstName}}</button>
                 </form>
                 {{!-- <a href="#" class="btn btn-primary btn-sm capitalize bookTutorBtn" value= {{id}} role="button">Book {{firstName}}</a>  --}}
                 
@@ -94,7 +91,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                  <button type="submit" class="btn btn-info btn-danger text-center bookTutorBtn" data-toggle="modal" data-target="#myModal">Schedule Appointment</button>
+                  <button type="submit" class="btn btn-info btn-primary text-center bookTutorBtn" data-toggle="modal" data-target="#myModal">Schedule Appointment</button>
                 </div>
               </div><!-- /.modal-content -->
             </div><!-- /.modal-dialog -->

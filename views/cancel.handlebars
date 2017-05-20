@@ -1,10 +1,14 @@
 <div class="container">
-	<h2> Appointment Successfully Cancelled! </h2>
+	
+	<div class="jumbotron cancelJumbotron">
+		<h2> Appointment Successfully Cancelled! </h2>
+	</div>
+	
 	<!-- Bookings Made  -->
 
   	<div class="container-fluid searchResults">
       	<div class="row tutorRow">
-      		<h4 class = "tutorHeader">Your Bookings</h4> 
+      		<h4 class = "tutorHeader">Your Bookings:</h4> 
 
        		{{#each user}}
        			{{#unless this.available}}
@@ -16,7 +20,7 @@
                 				<p class = "text-center">{{this.about}}</p> 
 					            <form action="/cancel/{{this.id}}?_method=PUT" method="POST">
 					           		<input type = "hidden" name = "available" value = "1">
-					            	<button type="submit" class="btn btn-info btn-danger text-center bookTutorBtn" data-toggle="modal" data-target="#myModal">Cancel booking with {{this.firstName}}</button>
+					            	<button type="submit" class="btn btn-info btn-primary text-center bookTutorBtn" data-toggle="modal" data-target="#myModal">Cancel booking with {{this.firstName}}</button>
 					            </form>
 					        </div>
 					    </div>

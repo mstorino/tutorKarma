@@ -2,13 +2,14 @@
 <script type="text/javascript">var allSubjects = {{{availSubjArray}}}</script>
 <!-- MAIN CONTENT -->
 <div class="container">
+  <div class = "jumbotron deleteJumbotron">
+    
+   <h2>Welcome to the tutorKarma admin portal.</h2>
+   <h4>Here you may delete tutors & make appointments.</h4>
+
+  </div>
 
 
-
-<h2>Welcome Admin</h2>
-<h4>Here are a list of pending tutor appointments.</h4>
-<div>Pending appointments</div>
-<h4>Update and delete tutors below:</h4>
 
   <div class="container-fluid searchResults">
       <div class="row tutorRow">
@@ -27,12 +28,12 @@
 
 
     <form action="/admin/{{this.id}}?_method=DELETE" method="POST">
-      <button type="submit" class="btn btn-info btn-danger CRUDSubmit" data-toggle="modal" data-target="#myModal">Delete {{firstName}}</button>
+      <button type="submit" class="btn btn-info btn-primary CRUDSubmit" data-toggle="modal" data-target="#myModal">Delete {{firstName}}</button>
     </form>
 
     <form action="/admin/{{id}}?_method=PUT" method="POST">
         <input type = "hidden" name = "available" value = "0">
-          <button type="submit" class="btn btn-info btn-danger CRUDUpdate" data-toggle="modal" data-target="#myModal">Schedule Appointment</button>
+          <button type="submit" class="btn btn-info btn-primary CRUDUpdate" data-toggle="modal" data-target="#myModal">Schedule Appointment</button>
     </form>
 
   <!-- <div class="row CRUDButtons">

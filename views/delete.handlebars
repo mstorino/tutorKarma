@@ -20,13 +20,11 @@
 
 <div class = "jumbotron deleteJumbotron">
 	
-	
-	<div class = "text-center">{{!-- <span class="glyphicon glyphicon-certificate" aria-hidden="true"></span> --}}<span><img src='./assets/img/success.jpg'</span><h2>You Successfully Deleted a Tutor.</h2></div>
-
+  <h2>You Successfully Deleted a Tutor.</h2>
 
 </div>
 
-<h4>Would you like to delete another tutor?</h4>
+<h4>Would you like to make another appointment or delete another tutor?</h4>
 
   <div class="container-fluid searchResults">
       <div class="row tutorRow">
@@ -45,12 +43,12 @@
 
 
     <form action="/admin/{{this.id}}?_method=DELETE" method="POST">
-      <button type="submit" class="btn btn-info btn-danger CRUDSubmit" data-toggle="modal" data-target="#myModal">Delete {{firstName}}</button>
+      <button type="submit" class="btn btn-info btn-primary CRUDSubmit" data-toggle="modal" data-target="#myModal">Delete {{firstName}}</button>
     </form>
 
     <form action="/admin/{{id}}?_method=PUT" method="POST">
         <input type = "hidden" name = "available" value = "0">
-          <button type="submit" class="btn btn-info btn-danger CRUDUpdate" data-toggle="modal" data-target="#myModal">Update Avaialbility</button>
+          <button type="submit" class="btn btn-info btn-primary CRUDUpdate" data-toggle="modal" data-target="#myModal">Update Avaialbility</button>
     </form>
 
   <!-- <div class="row CRUDButtons">

@@ -55,6 +55,10 @@ body {
   background-color: #a2ca8c;
 }
 
+.panel-body {
+	min-height:200px;
+}
+
 /*END MAIN PAGE STYLE*/
 
 
@@ -102,9 +106,9 @@ body {
 	float:right;
 }
 
-.deleteJumbotron {
+.deleteJumbotron, .tutorJumbotron, .studentJumbotron, .createJumbotron, .cancelJumbotron, .appointmentJumbotron {
 	background-color: white;
-	background: none;
+	background-image: none;
 }
 
 
@@ -245,9 +249,13 @@ label.CRUDCheck {
 .CRUDSubmit {
 	background-color:#f8f085;
 }
-.CRUDUpdate {
+.CRUDSubmit:hover, .CRUDUpdate:hover {
 	background-color: #a2ca8c;
+}
+.CRUDUpdate {
+	background-color: #58709e;
 	margin-top:10px;
+	color: white;
 }
 /* Extra small devices (phones, less than 768px) */
 /* No media query since this is the default in Bootstrap */

@@ -1,53 +1,60 @@
 # tutorKarma 
+
+CONTENTS OF THIS FILE
+
+----------------------
+
+*Introduction
+*Installation
+*Using the application
+
+INTRODUCTION
+-------------
+
 Team Name: Karma
 Team Mascot: Quokka
 
-Community based tutoring application utilizing Git, Github, Pull Requests, HTML, CSS, JavaScript, Node, npm, Express.js, MySQL, Schema and Seed files, Sequelize.js, RESTful Routes, Heroku, External APIs, Bootstrap, jQuery and Handlebars.
+Community based tutoring application utilizing Git, Github, Pull Requests, HTML, CSS, JavaScript, Node, npm, Express.js, MySQL, Schema and Seed files, Sequelize.js, RESTful Routes, External APIs, Bootstrap, jQuery and Handlebars.
 
-tutorKarma is a data-focused application that connects students with tutors in their local community based on area of expertise and availability. The application utilizes a data persistence layer (MySQL) with full CRUD capabiliites. tutorKarma runs in a development environment (localhost) and runs on Heroku.  
+tutorKarma is a data-focused application that connects students with tutors in their local community based on area of expertise. The application utilizes a data persistence layer (MySQL) with full CRUD capabiliites. tutorKarma runs in a development environment (localhost).
 
-The core features of the application include: currency (?). Administrators add tutors to a searchable database. Students find tutors through a customized student portal that displays tutors based on subject matter and availablity. Once a tutor is selected the tutor receives email notification (?).    
-
-To Do:
-
-Directories and file naming should be clear
-Files should be organized following typical Node, Express, and MySQL conventions
-Code should be well-commented
-Code should be indented consistently for easier review
-Code should have spacing in consistent fashion
-
-Documentation
-Instructions for how to load app on dev environment
-Instructions for how to use application
-All instructions should be written in Markdown in README.md file
-
-Front end quality / User experience
-User interaction with application should be functional
-Users should be able to figure out implementation of application with basic review
-Responsiveness (mobile and desktop) is NOT required
-
-Back end stability
-Node and npm should be used with proper .gitignore and package.json setup
-Application should run in development environment (localhost)
-Application should run on Heroku (free plan and free add-ons)
-Application should use MySQL (recommended) or Firebase
-
-Participation
-A single Git repo on Github should be established on the first day
-All team members’ work should be conducted and committed within that same project
-Individual grades will be assigned based on project contribution
-All students should strive to push themselves to work across the app (front-end/back-end)
+The core features of the application include: Students find tutors through a customized student portal that displays tutors based on subject matter or name. The student can then book a tutor.  Tutors can complete a form to be added to the list of available tutors. Administrators can update or delete tutors in the database.      
 
 
 
+INSTALLATION
+---------------
+
+All dependencies can be installed using the node_modules file. 
+
+1.Install MySQL 
+2.Go to https://github.com/mstorino/tutorKarma
+3. Select "Clone or download" and copy the url
+4.In your command line, go to the folder where you will be storing the file
+5.Enter "git clone (url)"
+6.Enter "npm install" to install the required modules
+7.Once the dependencies have been installed, open the "config.json" file and enter your mySQL password in the three places where it is required
+8.Open mySQL and run the schema file to create the database.
+9. In the command line, enter "node server.js"
+10.You will see "App listening on port (portnumber)"
 
 
 
-
-Teams
-Karel Hartlieb
-Alita Kendrick
-Rahul Nallappa
-Angela Sanecki
-Maggie Storino
+USING THE APPLICATION
+----------------------
+1.Go to http://localhost:(portnumber)
+Hey guys, I'm running a bit late, stuck waiting for a purple line at Howard
+2. To search for a tutor, select "search tutors"
+3. Select the desired subject from the Subject List
+4. A list of tutors who teach that subject will display
+5.Select "book tutor" to book a tutor
+6.To update and delete tutors go to http://localhost:portnumber/admin
+7. Select "Delete" or "Unavailable" and "Update" to update the database
+8.To become a tutor, go to http://localhost:portnumber/tutor
+9.Enter first name, last name, email, description and select a subject from subject list.  Select "Submit"
+
+
+
+
+
 

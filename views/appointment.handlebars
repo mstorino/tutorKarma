@@ -14,7 +14,7 @@
             				<div class="tutorCaption">
              					<h4 class = "capitalize tutorName">{{this.firstName}}</h4>
                 				<p class = "text-center">{{this.about}}</p> 
-					            <form action="/student/{{this.id}}?_method=PUT" method="POST">
+					            <form action="/appointment/{{this.id}}?_method=PUT" method="POST">
 					           		<input type = "hidden" name = "available" value = "1">
 					            	<button type="submit" class="btn btn-info btn-danger text-center bookTutorBtn" data-toggle="modal" data-target="#myModal">Cancel booking with {{this.firstName}}</button>
 					            </form>

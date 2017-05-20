@@ -41,6 +41,16 @@ module.exports = function(app) {
     })
   }); 
 
+  app.get("/cancel", function (req, res) {  
+    db.User.findAll({        
+    }).then(function(data){
+      var hbsObject = {
+        user: data
+      };
+    res.render("cancel", hbsObject);    
+    })
+  }); 
+
   app.put("/appointment/:id", function(req, res) {
     db.User.update({
         available: req.body.available
@@ -50,13 +60,28 @@ module.exports = function(app) {
         id: req.params.id,
       }
     }).then(function(dbTutors) {
-      res.redirect("cancel");
+      res.redirect("/cancel");
     });
   });
 
-app.get("/cancel", function (req, res) {
+  app.put("/cancel/:id", function(req, res) {
+    db.User.update({
+        available: req.body.available
+      },
+        {
+      where: {
+        id: req.params.id,
+      }
+    }).then(function(dbTutors) {
+      res.redirect("/cancel");
+    });
+  });
+
+
+
+/*app.get("/cancel", function (req, res) {
     res.render("cancel")
-  });  
+  }); */ 
   // app.get("/cancel", function (req, res) {  
   //   db.User.findAll({        
   //   }).then(function(data){

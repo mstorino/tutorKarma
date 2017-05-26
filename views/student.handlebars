@@ -9,62 +9,60 @@
   </div>
 
 <!-- search buttons  -->
-<!-- tutor search  -->
-<div class="row searchDropDowns">
 
-    <div class="form-group col-lg-4">
-      <label class ="searchLabel" for="tutorValue">Tutor List:</label>
-      <select class="form-control capitalize" id="sel1">
-      <option class = "hi" value = 0></option>
-          {{#each availTutor}}
+  <div class="row searchDropDowns">
+      <!-- tutor search  -->
+
+      <div class="form-group col-lg-4">
+        <label class ="searchLabel" for="tutorValue">Tutor List:</label>
+        <select class="form-control capitalize" id="sel1">
+            <option class = "hi" value = 0></option>
+            {{#each availTutor}}
             <option class = "hi" value = {{id}}>{{firstName}}</option>
-          {{/each}}
-      </select>
-    </div>
+            {{/each}}
+        </select>
+      </div>
 
-    <!-- subject search  -->
+      <!-- subject search  -->
 
-    <div class="form-group col-lg-4">
-      <label class ="searchLabel" for="tutorValue">Subject List:</label>
-      <select class="form-control" id="sel2">
-      <option class = "hi" value = 0></option>
-          {{#each availSubject}}
-            <option class = "hi" value = {{id}}>{{subjectName}}</option>
-          {{/each}}
-      </select>
-    </div>
+      <div class="form-group col-lg-4">
+        <label class ="searchLabel" for="tutorValue">Subject List:</label>
+        <select class="form-control" id="sel2">
+        <option class = "hi" value = 0></option>
+            {{#each availSubject}}
+              <option class = "hi" value = {{id}}>{{subjectName}}</option>
+            {{/each}}
+        </select>
+      </div>
 
-</div> {{!-- end .searchDropDowns --}}
+  </div> {{!-- end .searchDropDowns --}}
 
 <!-- search results  -->
   <div class="container-fluid searchResults">
       <div class="row tutorRow">
-      <h4 class = "tutorHeader">Our awesome tutors:</h4> 
+        <h4 class = "tutorHeader">Our awesome tutors:</h4> 
 
        {{#each availTutor}}
         <div class="container tutorThumbnailContainer col-xs-6 col-md-3 col-lg-3">
           <div class="thumbnail tutorThumbnail">
             <img src ="assets/img/tutor{{id}}.jpg"> 
-            {{!-- <img src="http://placehold.it/500x500/EEE"> --}}
+            
             <div class="tutorCaption">
-             
-                
-                <h4 class = "capitalize tutorName">{{firstName}}</h4>
-                <p class = "text-center">{{about}}</p> 
+                 
+              <h4 class = "capitalize tutorName">{{firstName}}</h4>
+              <p class = "text-center">{{about}}</p> 
               
-                <form action="/student/{{id}}?_method=PUT" method="POST">
-                  <input type = "hidden" name = "available" value = "0">
-                  <button type="submit" class="btn btn-info btn-primary text-center bookTutorBtn" data-toggle="modal" data-target="#myModal">Book A Session With {{firstName}}</button>
-                </form>
-                {{!-- <a href="#" class="btn btn-primary btn-sm capitalize bookTutorBtn" value= {{id}} role="button">Book {{firstName}}</a>  --}}
-                
+              <form action="/student/{{id}}?_method=PUT" method="POST">
+                <input type = "hidden" name = "available" value = "0">
+                <button type="submit" class="btn btn-info btn-primary text-center bookTutorBtn" data-toggle="modal" data-target="#myModal">Book A Session With {{firstName}}</button>
+              </form>
+            
             </div> {{!-- end caption --}}
 
           </div>{{!--  endTutorThumbnail --}}
 
         </div> {{!-- end tutorThumbnailContainer --}}
       {{/each}}
-  
       
       </div> <!-- close .tutorRow div  -->
 

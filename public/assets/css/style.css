@@ -43,8 +43,7 @@ h4 {
 }*/
 
 .mainJumbotron{
-	/*color:#58709e;*/
-	/*text-align: center;*/
+	
 	height: 360px;
 	background: url(../img/landingImg.jpg);
 
@@ -54,19 +53,11 @@ h4 {
 	font-weight:800;
 	font-size: 36px;
 	line-height:.8;
-	/*font-size: 2.1em;*/
+	padding-left:70px;
     color: #333;
     letter-spacing: -0.5px;
     font-family: "HelveticaNeueHeavy","Helvetica Neue",Helvetica,Arial,sans-serif;
-	/*left: 476px;*/
-	/*top: 200px;*/
-	/*position: absolute;*/
-}
 
-.jumbotron {
-	/*background-color: #58709e;*/
-	/*background: url(../img/background1.jpg);
-	background-size: 1000px 500px;*/
 }
 
 .getStartBtn {
